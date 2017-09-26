@@ -1,6 +1,6 @@
 .nav-container {
   width: 75%;
-  position: fixed;
+  position: absolute;
   left: 50%;
   margin-left: -37.5%;
 }
