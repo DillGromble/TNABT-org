@@ -1,0 +1,9 @@
+.mission-list {
+  line-height: 1.30em;
+  width: 60%;
+  margin: 20px auto 0 auto;
+}
+
+.mission-list li {
+  margin-top: 15px;
+}

@@ -1,5 +1,5 @@
-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./img/home-hero.jpg);
+.header-home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../img/home-hero.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -16,3 +16,7 @@ header {
   color: #e8e8e8;
 }
 
+.hero-subtext {
+  width: 70%;
+  margin: 0 auto;
+}

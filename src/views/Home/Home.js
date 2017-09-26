@@ -1,15 +1,15 @@
 import React from 'react'
 
-import './Home.css'
-import './img/home-hero.jpg'
+import Header from './components/header'
+import Mission from './components/mission'
+import PictureNav from './components/picture-nav'
+
 
 const Home = () => (
-  <div className="home-container">
-    <header>
-      <div className="hero-text-box">
-        <h1>TNABT</h1>
-      </div>
-    </header>
+  <div>
+    <Header />
+    <Mission />
+    <PictureNav />
   </div>
 )
 
