@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+
+import Navbar from './components/Navbar/Navbar'
+import Home from './views/Home/Home'
+
+import './grid.css'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>TNABT</h2>
-        </div>
-        <p className="App-intro">
-          The Tennessee Association of Biology Teachers
-        </p>
+        <Navbar />
+        <Home />
       </div>
     );
   }
 }
 
-export default App;
+export default App

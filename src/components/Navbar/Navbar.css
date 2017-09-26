@@ -1,0 +1,92 @@
+.nav-container {
+  width: 75%;
+  position: fixed;
+  left: 50%;
+  margin-left: -37.5%;
+}
+
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 55px;
+  position: relative;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+  padding: 8px 0;
+  color: #e8e8e8;
+  position: relative;
+}
+
+.main-nav li::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0%;
+  background-color: #0E820C;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all ease 250ms;
+}
+
+.main-nav li:hover::after {
+  width: 100%;
+}
+
+.mobile-nav {
+  display: none;
+  float: right;
+  font-size: 2.7em;
+  color: #e8e8e8;
+  margin: 50px 40px 0 0;
+}
+
+
+.logo-nav {
+  height: 100px;
+  width: auto;
+  margin-top: 50px;
+}
+
+
+@media only screen and (max-width: 1460px) {
+  .nav-container {
+    width: 85%;
+    margin-left: -42.5%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .nav-container {
+    width: 95%;
+    margin-left: -47.5%;
+  }
+
+  .main-nav li { margin-left: 35px; }
+}
+
+@media only screen and (max-width: 1023px) {
+  .logo-nav { height: 85px; }
+  .main-nav li { margin-left: 30px; }
+}
+
+@media only screen and (max-width: 850px) {
+  .logo-nav { height: 80px; }
+  .main-nav li { margin-left: 25px; }
+  .nav-container {
+    width: 98%;
+    margin-left: -49%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .main-nav { display: none; }
+  .mobile-nav { display: block; }
+}
+
+@media only screen and (max-width: 480px) {
+  .logo-nav { height: 70px; }
+}
