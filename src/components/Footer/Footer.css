@@ -15,7 +15,6 @@ footer {
 
 .footer-content {
   height: 60%;
-  padding-top: 30px;
   display: flex;
   align-items: center;
 }
@@ -24,6 +23,7 @@ footer {
 .footer-links {
   float: left;
   width: 35%;
+  padding-top: 30px;
   justify-content: space-evenly;
   font-size: 0.9em;
 }
@@ -47,6 +47,7 @@ footer {
   float: right;
   width: 20%;
   margin-right: 9%;
+  padding-top: 20px;
   justify-content: space-around;
   font-size: 1.5em;
   color: #999999;
@@ -84,4 +85,30 @@ footer {
   transform: translateX(-50%);
   font-size: 0.8em;
   color: #717171;
+  white-space: nowrap;
+}
+
+
+/*--------------------------------Queries-------------------------------------*/
+
+@media only screen and (max-width: 850px) {
+  .contact-us { margin-right: 30px; }
+  .footer-icons { margin-right: 75px; }
+}
+
+@media only screen and (max-width: 767px) {
+  .footer-icons i::after { content: ''; }
+  .footer-icons { font-size: 2em; }
+  .footer-links { width: 50%; }
+}
+
+@media only screen and (max-width: 480px) {
+  .footer-links { display: none; }
+  .footer-icons {
+    float: none;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 10px;
+    justify-content: space-evenly;
+  }
 }
