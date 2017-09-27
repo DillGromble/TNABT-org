@@ -1,0 +1,33 @@
+.section-upcoming p {
+  text-align: center;
+}
+
+.upcoming-container {
+  width: 950px;
+  height: 240px;
+  margin: 80px auto 50px auto;
+  position: relative;
+  display: flex;
+}
+
+.upcoming-container img {
+  height: 100%;
+  width: auto;
+  transition: z-index 0.4s step-end, transform 0.5s, margin 250ms;
+  z-index: 0;
+  position: relative;
+}
+
+
+.upcoming-west { margin-top: 5px; }
+
+.upcoming-mid {
+  margin-left: -37px;
+  margin-right: -132px;
+}
+
+.region:hover {
+  transform: scale(1.1);
+  z-index: 4;
+  transition: transform 0.5s, margin 250ms;
+}
