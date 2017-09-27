@@ -1,0 +1,87 @@
+footer {
+  margin-top: 80px;
+}
+
+.footer-banner {
+  height: 40px;
+  background-color: #0E820C;
+}
+
+.footer {
+  height: 110px;
+  background-color: #165106;
+  position: relative;
+}
+
+.footer-content {
+  height: 60%;
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+/*---------------------------------Links--------------------------------------*/
+.footer-links {
+  float: left;
+  width: 35%;
+  justify-content: space-evenly;
+  font-size: 0.9em;
+}
+
+.footer-links a {
+  color: #999999;
+  text-decoration: none;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+  border-bottom: 1px transparent;
+  transition: border 0.5s;
+}
+
+.footer-links a:hover {
+  border-bottom: 1px solid #999999;
+}
+
+
+/*---------------------------------Icons--------------------------------------*/
+.footer-icons {
+  float: right;
+  width: 20%;
+  margin-right: 9%;
+  justify-content: space-around;
+  font-size: 1.5em;
+  color: #999999;
+}
+
+.footer-icons i:hover {
+  color: #C3C3C3;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.footer-icons i:after {
+  font-size: 0.5em;
+  position: absolute;
+  z-index: 1;
+  padding-top: 2px;
+}
+
+.contact-us::after {
+  content: 'Contact Us';
+  transform: translate(-66%, 160%);
+}
+
+.facebook::after {
+  content: 'Visit our Facebook';
+  transform: translate(-52%, 160%);
+}
+
+
+
+.footer-rights {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8em;
+  color: #717171;
+}
