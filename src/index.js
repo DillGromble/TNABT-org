@@ -1,6 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App.js'
+import { Router, Route, browserHistory, IndexRedirect } from 'react-router'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+
+
+import App from './App.js'
+import Home from './views/Home/Home'
+
+
+ReactDOM.render(
+  <Router history={browserHistory} >
+    <Route path="/" component={App}>
+      <IndexRedirect to="/home" />
+      <Route path="/home" component={Home} />
+    </Route>
+  </Router>
+  , document.getElementById('root')
+)
