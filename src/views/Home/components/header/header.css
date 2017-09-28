@@ -1,5 +1,5 @@
 .header-home {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../img/home-hero.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./home-hero.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './header.css'
-import '../../img/home-hero.jpg'
+import './home-hero.jpg'
 
 
 const Header = () => (

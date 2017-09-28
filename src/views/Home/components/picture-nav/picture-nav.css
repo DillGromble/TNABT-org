@@ -51,3 +51,37 @@
   z-index: 2;
   transition: all 0.5s;
 }
+
+
+
+@media only screen and (max-width: 1600px) {
+  .link-photo img { height: 18vw; }
+  .section-picture-nav { padding: 80px 0; }
+}
+
+@media only screen and (max-width: 1460px) {
+  .link-photo img { height: 20vw; }
+}
+
+@media only screen and (max-width: 1200px) {
+  .section-picture-nav { padding: 60px 0; }
+}
+
+@media only screen and (max-width: 767px) {
+  .picture-nav li {
+    display: block;
+    float: left;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .picture-nav li {
+    display: block;
+    float: none;
+    width: 100%;
+    margin: 1px 0;
+  }
+
+  .section-picture-nav { padding: 40px 0; }
+}
