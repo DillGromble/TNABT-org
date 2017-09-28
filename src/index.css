@@ -89,12 +89,17 @@ h3 {
   }
 
   .row { padding: 0 2%; }
+  .copy { width: 80%; }
 }
 
 
 @media only screen and (max-width: 1023px) {
   body { font-size: 17px; }
   section { padding: 60px; }
+  .copy {
+    width: 80%;
+    margin-left: 10%;
+  }
 }
 
 
@@ -112,4 +117,9 @@ h3 {
 
   h1 { font-size: 1.8em; }
   h2 { font-size: 1.5em; }
+
+  .copy {
+    width: 100%;
+    margin-left: 0%;
+  }
 }
