@@ -20,6 +20,8 @@
   position: relative;
 }
 
+.main-nav li:first-child { margin-left: 0; }
+
 .main-nav li::after {
   content: '';
   display: block;
@@ -41,7 +43,7 @@
   float: right;
   font-size: 2.7em;
   color: #e8e8e8;
-  margin: 50px 40px 0 0;
+  margin: 35px 40px 0 0;
 }
 
 
@@ -76,6 +78,7 @@
 @media only screen and (max-width: 850px) {
   .logo-nav { height: 80px; }
   .main-nav li { margin-left: 25px; }
+  .main-nav { margin-right: 10px; }
   .nav-container {
     width: 98%;
     margin-left: -49%;
@@ -85,6 +88,7 @@
 @media only screen and (max-width: 767px) {
   .main-nav { display: none; }
   .mobile-nav { display: block; }
+  .logo-nav { margin-top: 30px; }
 }
 
 @media only screen and (max-width: 480px) {

@@ -8,9 +8,9 @@ const Footer = () => (
     <div className="footer">
 
       <div className="footer-links footer-content">
-        <a href="#">Back to Top</a>
-        <a href="#">About Us</a>
-        <a href="#">Pay Dues</a>
+        <a href="top">Back to Top</a>
+        <a href="top">About Us</a>
+        <a href="top">Pay Dues</a>
       </div>
 
       <div className="footer-icons footer-content">
