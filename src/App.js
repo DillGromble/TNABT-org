@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
-import Home from './views/Home/Home'
 
+import './index.css'
 import './grid.css'
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Home />
+        { this.props.children }
         <Footer />
       </div>
     );
