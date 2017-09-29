@@ -8,7 +8,7 @@ const Navbar = () => (
   <nav className="nav-container">
 
     <Link to="/home">
-      <img className="logo-nav" src="/assets/img/TNABT_logo.png" alt="TNABT Logo" />
+      <img className="logo-nav" src="assets/img/TNABT_logo.png" alt="TNABT Logo" />
     </Link>
 
     <ul className="main-nav">
