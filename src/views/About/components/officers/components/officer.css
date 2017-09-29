@@ -1,16 +1,52 @@
 .officer-component {
   height: 350px;
   width: 65%;
-  margin: 35px auto;
+  margin: 50px auto;
   box-shadow: 0px 2px 8px 0px #585858;
+  position: relative;
+  background-color: white;
+}
+
+.officer-component hr {
+  position: absolute;
+  top: 15px;
+  left: 50%;
 }
 
 .officer-headshot {
-  height: 200px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   border-radius: 50%;
+  box-shadow: 0px 0px 10px 0px #585858;
   object-fit: cover;
+  position: absolute;
+  top: 25px;
+  left: 33px;
 
 
   transform: rotate(90deg);
+}
+
+.officer-info {
+  float: right;
+  position: absolute;
+  width: 260px;
+  top: 22%;
+  right: 50px;
+}
+
+.officer-name {
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.officer-info h4 {
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.officer-info p {
+  font-size: 0.8em;
+  margin: 13px 0;
 }
