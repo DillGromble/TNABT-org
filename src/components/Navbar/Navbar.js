@@ -4,7 +4,7 @@ import './Navbar.css'
 
 const Navbar = () => (
   <nav className="nav-container">
-    <img className="logo-nav" src="/assets/img/TNABT_logo.png" alt="TNABT Logo" />
+    <img className="logo-nav" src="assets/img/TNABT_logo.png" alt="TNABT Logo" />
     <ul className="main-nav">
       <li>About Us</li>
       <li>Membership</li>

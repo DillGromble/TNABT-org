@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, browserHistory, IndexRedirect } from 'react-router'
+import { Router, Route, hashHistory, IndexRedirect } from 'react-router'
 
 
 
@@ -9,7 +9,7 @@ import Home from './views/Home/Home'
 
 
 ReactDOM.render(
-  <Router history={browserHistory} >
+  <Router history={hashHistory} >
     <Route path="/" component={App}>
       <IndexRedirect to="/home" />
       <Route path="/home" component={Home} />
