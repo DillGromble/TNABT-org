@@ -8,7 +8,7 @@ import Home from './views/Home/Home'
 import About from './views/About/About'
 
 ReactDOM.render(
-  <Router history={browserHistory} >
+  <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory} >
     <Route path="/" component={App}>
       <IndexRedirect to="/home" />
       <Route path="/home" component={Home} />
