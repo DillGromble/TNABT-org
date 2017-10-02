@@ -11,15 +11,23 @@ const Navbar = () => (
       <img className="logo-nav" src="assets/img/TNABT_logo.png" alt="TNABT Logo" />
     </Link>
 
+
     <ul className="main-nav">
-      <Link to="/about"><li>About Us</li></Link>
-      <li>Membership</li>
-      <li>Awards and Service</li>
-      <li>Resources</li>
+      <li>
+        <Link to="/about">About Us</Link>
+      </li>
+      <li>
+        <Link to="/membership">Membership</Link>
+      </li>
+      <li>
+        <Link to="/awards">Awards and Service</Link>
+      </li>
+      <li>
+        <Link to="/resources">Resources</Link>
+      </li>
       <li>Login</li>
     </ul>
     <i className="ion-navicon-round mobile-nav"></i>
-
   </nav>
 )
 

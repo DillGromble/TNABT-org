@@ -21,12 +21,14 @@ const PictureNav = () => (
         </li>
       </Link>
 
-      <li>
-        <figure className="link-photo">
-          <h3>Membership</h3>
-          <img src={ membership } alt="Membership" />
-        </figure>
-      </li>
+      <Link to="/membership">
+        <li>
+          <figure className="link-photo">
+            <h3>Membership</h3>
+            <img src={ membership } alt="Membership" />
+          </figure>
+        </li>
+      </Link>
 
       <li>
         <figure className="link-photo">
