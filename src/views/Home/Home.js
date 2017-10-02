@@ -5,6 +5,8 @@ import Mission from './components/mission'
 import PictureNav from './components/picture-nav'
 import Upcoming from './components/upcoming'
 
+
+
 const Home = () => (
   <div>
     <Header />

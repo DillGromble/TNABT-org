@@ -1,9 +1,9 @@
-.header-home {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(./home-hero.jpg);
+.header-about {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../../../img/about-us.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100vh;
+  height: 75vh;
   position: relative;
 }
 
@@ -15,9 +15,4 @@
   transform: translate(-50%, -50%);
   text-align: center;
   color: #e8e8e8;
-}
-
-.hero-subtext {
-  width: 70%;
-  margin: 0 auto;
 }
