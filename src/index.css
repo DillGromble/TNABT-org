@@ -78,7 +78,22 @@ h3 {
 
 a { text-decoration: none; }
 
+header {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
 
+.hero-text-box {
+  position: absolute;
+  max-width: 1140px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #e8e8e8;
+}
 
 /*--------------------------------Queries-------------------------------------*/
 

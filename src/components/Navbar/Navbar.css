@@ -21,6 +21,11 @@
   position: relative;
 }
 
+.main-nav li a {
+  text-decoration: none;
+  color: #e8e8e8;
+}
+
 .main-nav li:first-child { margin-left: 0; }
 
 .main-nav li::after {
