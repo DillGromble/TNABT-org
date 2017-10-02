@@ -1,6 +1,6 @@
 .officer-component {
   height: 350px;
-  width: 65%;
+  width: 740px;
   margin: 50px auto;
   box-shadow: 0px 2px 8px 0px #585858;
   position: relative;
@@ -9,6 +9,8 @@
 
 .officer-component hr {
   position: absolute;
+  height: 320px;
+  width: 1px;
   top: 15px;
   left: 50%;
 }
@@ -28,7 +30,7 @@
   float: right;
   position: absolute;
   width: 260px;
-  top: 22%;
+  top: 77px;
   right: 50px;
 }
 
@@ -46,4 +48,67 @@
 .officer-info p {
   font-size: 0.8em;
   margin: 13px 0;
+}
+
+
+
+@media only screen and (max-width: 1023px) {
+  .officer-component {
+    width: 700px;
+    height: 331px;
+  }
+  .officer-headshot {
+    height: 275px;
+    width: 275px;
+    top: 27px;
+    left: 37px;
+   }
+   .officer-info {
+     top: 84px;
+     right: 20px;
+   }
+   .officer-component hr { height: 301px; }
+}
+
+@media only screen and (max-width: 850px) {
+  .officer-component {
+    width: 625px;
+    height: 296px;
+  }
+  .officer-headshot {
+    height: 250px;
+    width: 250px;
+    top: 23px;
+    left: 29px;
+  }
+  .officer-info {
+    top: 65px;
+    right: 0;
+  }
+  .officer-component hr { height: 266px; }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .officer-component {
+    width: 325px;
+    height: 525px;
+  }
+  .officer-headshot {
+    height: 250px;
+    width: 250px;
+    top: 25px;
+    left: 38px;
+  }
+  .officer-info {
+    top: 320px;
+    right: 30px;
+    text-align: center;
+  }
+  .officer-component hr {
+    height: 1px;
+    width: 295px;
+    top: 57%;
+    left: 15px;
+  }
 }

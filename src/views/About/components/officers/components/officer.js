@@ -10,7 +10,7 @@ const Officer = ({ name, office, school, classes, phone, email, image }) => (
       src={image}
       alt={`TNABT ${office}`}
     />
-    <hr width="1" size="320" />
+    <hr />
     <div className="officer-info">
       <h3 className="officer-name">{name}</h3>
       <h4>{office}</h4>
