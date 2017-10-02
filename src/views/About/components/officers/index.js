@@ -4,6 +4,8 @@ import './officers.css'
 
 import Officer from './components/officer'
 
+import bob from './img/bob.png'
+
 const officerTest = {
   name: 'Robert Pruitt',
   office: 'Secretary',
@@ -11,7 +13,7 @@ const officerTest = {
   classes: 'Biology I and AP Biology',
   phone: '(615) 298-5514  ext: 326',
   email: 'robert.pruitt@montgomerybell.edu',
-  image: 'https://s3.amazonaws.com/tnabt-content/Officers/Treasurer/Bob.jpg'
+  image: bob
 }
 
 
