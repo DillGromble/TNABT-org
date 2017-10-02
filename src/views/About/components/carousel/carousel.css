@@ -1,8 +1,15 @@
 .section-carousel {
-  width: 50%;
+  width: 80%;
+  max-width: 920px;
   height: auto;
+  margin: 0 auto;
 }
 
 .photo-carousel {
   margin-top: 50px;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .photo-carousel { margin: 0; }
 }
