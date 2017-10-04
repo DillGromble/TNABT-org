@@ -1,0 +1,30 @@
+.section-awards-info { text-align: center; }
+
+.nominate-link { padding-top: 1em; }
+
+
+.section-current-OBT { background-color: #F4F4F4; }
+.current-OBT-pic {
+  display: block;
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  margin: 40px auto 30px auto;
+  border-radius: 50%;
+}
+
+.current-OBT-name {
+  margin: 20px 0 5px 0 ;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+.current-OBT-school {
+  font-weight: 300;
+  font-size: 0.9em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.current-OBT-bio {
+  text-indent: 20px;
+}
