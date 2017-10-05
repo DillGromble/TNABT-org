@@ -2,6 +2,8 @@ import React from 'react'
 
 import Header from './components/header'
 import CurrentOBT from './components/currentOBT'
+import PreviousOBT from './components/previousOBT'
+
 
 import './awards.css'
 
@@ -24,6 +26,7 @@ const Awards = () => (
     </section>
 
     <CurrentOBT />
+    <PreviousOBT />
   </div>
 )
 
