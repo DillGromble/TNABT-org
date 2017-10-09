@@ -23,3 +23,7 @@
 .current-OBT-bio {
   text-indent: 20px;
 }
+
+@media only screen and (max-width: 360px) {
+  .current-OBT-pic { height: 260px; width: 260px; }
+}

@@ -3,10 +3,10 @@ import React from 'react'
 import Header from './components/header'
 import CurrentOBT from './components/currentOBT'
 import PreviousOBT from './components/previousOBT'
+import OpenOffices from './components/open-offices'
 
 
 import './awards.css'
-
 
 
 const Awards = () => (
@@ -27,6 +27,7 @@ const Awards = () => (
 
     <CurrentOBT />
     <PreviousOBT />
+    <OpenOffices />
   </div>
 )
 

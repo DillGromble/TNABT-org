@@ -95,6 +95,47 @@ header {
   color: #e8e8e8;
 }
 
+
+
+/*--------------------------------Buttons-------------------------------------*/
+.btn {
+  border-radius: 28px;
+  border: 2px solid #0E820C;
+  font-family: inherit;
+  font-size: 0.9em;
+  padding: 15px 20px;
+}
+
+.btn-full {
+  background-color: #0E820C;
+  color: #EDEDED;
+  transition: all 0.2s;
+}
+
+.btn-full:hover,
+.btn-full:active {
+  background-color: #165106;
+  border: 2px solid #165106;
+  cursor: pointer;
+}
+
+
+.btn-ghost {
+  background-color: #EDEDED;
+  color: #0E820C;
+  transition: all 0.2s;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+  background-color: #0E820C;
+  color: #EDEDED;
+  cursor: pointer;
+}
+
+
+
+
 /*--------------------------------Queries-------------------------------------*/
 
 @media only screen and (max-width: 1200px) {
