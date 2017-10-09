@@ -22,7 +22,7 @@ const OpenOffices = () => (
       <h2>Open Offices</h2>
       {
         dummyOffice.map(office => (
-          <OfficeDropdown key={office.name} {...office} />
+          <OfficeDropdown key={office.title} {...office} />
         ))
       }
     </div>
