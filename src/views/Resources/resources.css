@@ -1,1 +1,14 @@
 .tip-copy { text-align: center; }
+
+
+.boxes {
+  height: 179px;
+  width: 300px;
+  min-width: 300px;
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
