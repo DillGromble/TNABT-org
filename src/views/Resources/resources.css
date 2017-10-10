@@ -1,6 +1,5 @@
 .tip-copy { text-align: center; }
 
-
 .boxes {
   height: 179px;
   width: 300px;
@@ -8,7 +7,7 @@
   display: inline-block;
 }
 
-.flex {
+.flex-between {
   display: flex;
   justify-content: space-between;
 }
