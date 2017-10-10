@@ -30,12 +30,14 @@ const PictureNav = () => (
         </li>
       </Link>
 
-      <li>
-        <figure className="link-photo">
-          <h3>Resources</h3>
-          <img src={ resources } alt="Resources" />
-        </figure>
-      </li>
+      <Link to="/resources">
+        <li>
+          <figure className="link-photo">
+            <h3>Resources</h3>
+            <img src={ resources } alt="Resources" />
+          </figure>
+        </li>
+      </Link>
 
       <Link to="/awards-service">
         <li>
