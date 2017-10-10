@@ -13,6 +13,7 @@
 }
 
 
+/*------------------------------Resource Links--------------------------------*/
 .section-resource-links {
   background-color: #F4F4F4;
 }
@@ -35,4 +36,27 @@
   width: inherit;
   padding: 15px;
   object-fit: scale-down;
+}
+
+
+/*---------------------------------Lands End----------------------------------*/
+.lands-end-container {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.lands-end-container a {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.resource-link.lands-end {
+  height: 130px;
+  margin: 40px auto 0 auto;
+}
+
+.lands-end-link {
+  padding: 0 15px;
 }
