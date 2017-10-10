@@ -11,3 +11,28 @@
   display: flex;
   justify-content: space-between;
 }
+
+
+.section-resource-links {
+  background-color: #F4F4F4;
+}
+
+.resource-link-container {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.resource-link {
+  height: 150px;
+  width: 300px;
+  background-color: white;
+  box-shadow: 0px 2px 8px 0px #585858;
+  position: relative;
+}
+
+.resource-link img {
+  height: inherit;
+  width: inherit;
+  padding: 15px;
+  object-fit: scale-down;
+}
