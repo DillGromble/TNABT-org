@@ -22,3 +22,33 @@
   padding: 15px;
   object-fit: scale-down;
 }
+
+
+
+
+@media only screen and (max-width: 1200px) {
+  .resource-link {
+    height: 125px;
+    width: 250px;
+  }
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .resource-link {
+    height: 113px;
+    width: 225px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .resource-link {
+    margin: 0 auto;
+    height: 150px;
+    width: 300px;
+  }
+  .resource-link-container {
+    margin-top: 0;
+    height: 600px;
+  }
+}
