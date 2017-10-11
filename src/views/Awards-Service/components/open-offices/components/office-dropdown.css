@@ -57,3 +57,12 @@
 }
 
 .office-btn:hover { background-color: #59af17; }
+
+
+@media only screen and (max-width: 1023px) {
+  .dropdown-container { width: 80%; }
+}
+
+@media only screen and (max-width: 767px) {
+  .dropdown-container { width: 100%; }
+}
