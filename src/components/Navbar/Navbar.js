@@ -21,9 +21,12 @@ class Navbar extends Component {
 
   toggleDropdown() {
     const hamburgerOpen = !this.state.hamburgerOpen
+
     const [ hamburgerIcon, mobileLinkState ] = hamburgerOpen
       ? ['ion-close-round close-icon', 'mobile-nav-open']
       : ['ion-navicon-round', '']
+
+    document.body.style.overflow = hamburgerOpen ? 'hidden' : ''
     this.setState({ hamburgerOpen, mobileLinkState, hamburgerIcon })
   }
 
