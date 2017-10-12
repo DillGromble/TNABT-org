@@ -1,15 +1,18 @@
 import React from 'react'
 
-import Header from './components/header'
+import Header from '../../components/Header/Header'
 import Officers from './components/officers'
 import PhotoCarousel from './components/carousel'
 
+
 import './about.css'
+import bgImage from '../../img/about-us.jpg'
 
 
 const About = () => (
   <div>
-    <Header />
+    <Header bgImg={bgImage}>About Us</Header>
+
     <PhotoCarousel />
     <Officers />
     <section className="section-constitution">
