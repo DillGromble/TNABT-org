@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Header from './components/header'
+import Header from '../../components/Header/Header'
 
 import './membership.css'
-
+import headerImg from '../../img/membership.jpg'
 
 const Membership = () => (
   <div>
-    <Header />
+    <Header bgImg={headerImg}>Membership</Header>
 
     <section className="section-about-membership">
       <div className="row">

@@ -1,17 +1,18 @@
 import React from 'react'
 
-import Header from './components/header'
+import Header from '../../components/Header/Header'
 import CurrentOBT from './components/currentOBT'
 import PreviousOBT from './components/previousOBT'
 import OpenOffices from './components/open-offices'
 
 
 import './awards.css'
+import headerBg from '../../img/awards.jpg'
 
 
 const Awards = () => (
   <div>
-    <Header />
+    <Header bgImg={headerBg}>Awards and Service</Header>
 
     <section className="section-awards-info">
       <div className="row">

@@ -2,16 +2,16 @@ import React from 'react'
 
 import './resources.css'
 
-import Header from './components/header'
+import Header from '../../components/Header/Header'
 import TipOfMonth from './components/tip-of-the-month'
 import ResourceLinks from './components/links'
 
 import LandsEndLogo from './img/lands_end_logo.png'
-
+import headerBg from '../../img/resources.jpg'
 
 const Resources = () => (
   <div>
-    <Header />
+    <Header bgImg={headerBg}>Resources</Header>
     <TipOfMonth />
     <ResourceLinks />
 
