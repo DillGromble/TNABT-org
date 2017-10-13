@@ -1,0 +1,13 @@
+.member-form-popup {
+  width: 650px;
+  height: 600px;
+  background-color: lightgreen;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -325px;
+  margin-top: -300px;
+  z-index: -999;
+  opacity: 0;
+  transition: opacity 0.3s;
+}

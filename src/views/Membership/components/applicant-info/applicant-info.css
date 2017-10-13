@@ -1,0 +1,11 @@
+aside {
+  text-align: center;
+  padding: 60px;
+}
+
+.applicant-btn-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
