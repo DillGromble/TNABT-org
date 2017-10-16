@@ -1,13 +1,3 @@
 .section-dues { background-color: #F4F4F4; }
 
-aside {
-  text-align: center;
-  padding: 60px;
-}
 
-.applicant-btn-container {
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 20px;
-}
