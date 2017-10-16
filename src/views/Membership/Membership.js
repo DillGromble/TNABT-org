@@ -6,7 +6,7 @@ import './membership.css'
 import headerImg from '../../img/membership.jpg'
 
 import ApplicantSection from './components/applicant-info'
-import MemberForm from './components/membership-form'
+import MemberForm from './components/membership-form/container'
 
 
 

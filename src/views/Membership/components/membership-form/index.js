@@ -2,7 +2,7 @@ import React from 'react'
 
 import './member-form.css'
 
-const MemberForm = ({ closeWindow, isVisible }) => (
+const MemberForm = ({ closeWindow, isVisible, onSubmit, handleChange }) => (
   <div className={`disable-bg ${isVisible}`}>
     <div className={`member-form-popup ${isVisible}`}>
       <i className="ion-close-round popup-exit-icon" onClick={closeWindow} />
@@ -13,8 +13,7 @@ const MemberForm = ({ closeWindow, isVisible }) => (
         </header>
 
 
-        <form action="" method="POST">
-
+        <form onSubmit={onSubmit}>
           <div className="row form-group">
             <label htmlFor="name">Name:</label>
             <br />
@@ -24,12 +23,14 @@ const MemberForm = ({ closeWindow, isVisible }) => (
                 type="text"
                 name="fname"
                 placeholder="First Name"
+                onChange={handleChange}
               />
               <input
                 className="form-two-input"
                 type="text"
                 name="lname"
                 placeholder="Last Name"
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -41,22 +42,25 @@ const MemberForm = ({ closeWindow, isVisible }) => (
               <input
                 className="form-one-input"
                 type="text"
-                name="adr-street"
+                name="street"
                 placeholder="Address"
+                onChange={handleChange}
               />
             </div>
             <div className="input-group">
               <input
                 className="form-two-input"
                 type="text"
-                name="adr-city"
+                name="city"
                 placeholder="City"
+                onChange={handleChange}
               />
               <input
                 className="form-two-input"
                 type="text"
-                name="adr-zip"
+                name="zip"
                 placeholder="Zip Code"
+                onChange={handleChange}
               />
             </div>
           </div>
@@ -71,6 +75,7 @@ const MemberForm = ({ closeWindow, isVisible }) => (
                   type="tel"
                   name="phone"
                   placeholder="Phone"
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -84,6 +89,7 @@ const MemberForm = ({ closeWindow, isVisible }) => (
                   type="email"
                   name="email"
                   placeholder="Email"
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -99,6 +105,7 @@ const MemberForm = ({ closeWindow, isVisible }) => (
                   type="text"
                   name="school"
                   placeholder="School"
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -112,10 +119,13 @@ const MemberForm = ({ closeWindow, isVisible }) => (
                   type="text"
                   name="classes"
                   placeholder="Classes Taught"
+                  onChange={handleChange}
                 />
               </div>
             </div>
           </div>
+
+          <button type="submit">Submit</button>
         </form>
 
 
