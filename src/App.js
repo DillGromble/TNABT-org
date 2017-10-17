@@ -4,12 +4,12 @@ import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import ContactUs from './components/Contact-Us/container'
 
-
 import './index.css'
 import './grid.css'
 
-class App extends Component {
 
+
+class App extends Component {
   constructor() {
     super()
     this.state = ({ popupShown: false })
@@ -32,22 +32,20 @@ class App extends Component {
 
 
   render() {
+    const popupShow = this.state.popupShown ? 'popup-show' : ''
     return (
       <div className="App">
         <Navbar />
-        <ContactUs
-          isVisible={this.state.popupShown ? 'popup-show' : ''}
-          closeWindow={this.togglePopup}
-        />
+        <ContactUs isVisible={popupShow} closeWindow={this.togglePopup} />
         {
           React.cloneElement(
             this.props.children,
             { togglePopup: this.togglePopup }
           )
         }
-        <Footer togglePopup={ this.togglePopup }/>
+        <Footer togglePopup={this.togglePopup} />
       </div>
-    );
+    )
   }
 }
 
