@@ -3,7 +3,7 @@ import React from 'react'
 
 import './applicant-info.css'
 
-const ApplicantSection = ({ openForm }) => (
+const ApplicantSection = ({ openForm, openContacts }) => (
   <section className="section-applicant-info">
 
     <div className="row">
@@ -23,7 +23,7 @@ const ApplicantSection = ({ openForm }) => (
 
       <div className="row applicant-btn-container">
         <button className="btn btn-full" onClick={ openForm} >Apply Now</button>
-        <button className="btn btn-ghost">Contact Us</button>
+        <button className="btn btn-ghost" onClick={ openContacts }>Contact Us</button>
       </div>
     </div>
   </section>

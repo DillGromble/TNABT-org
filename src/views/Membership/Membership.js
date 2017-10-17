@@ -9,7 +9,6 @@ import ApplicantSection from './components/applicant-info'
 import MemberForm from './components/membership-form/container'
 
 
-
 export default class Membership extends Component {
 
   constructor(props) {
@@ -18,10 +17,11 @@ export default class Membership extends Component {
     this.toggleForm = this.toggleForm.bind(this)
   }
 
+
   toggleForm() {
     this.setState({ showForm: !this.state.showForm })
-    this.props.togglePopup()
   }
+
 
   render() {
     return (
@@ -51,7 +51,7 @@ export default class Membership extends Component {
           </div>
         </section>
 
-        <ApplicantSection openForm={this.toggleForm} />
+        <ApplicantSection openForm={this.toggleForm} openContacts={this.props.togglePopup}/>
 
         <MemberForm
           isVisible={this.state.showForm ? 'popup-show' : ''}
