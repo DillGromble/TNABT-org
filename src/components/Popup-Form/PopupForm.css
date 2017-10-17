@@ -34,3 +34,54 @@
   bottom: 0;
   margin: 0;
 }
+
+
+form {
+  margin: 15px 40px;
+}
+
+.form-group {
+  padding: 7px 0;
+}
+
+.form-group.col:first-of-type {
+  margin-right: 40px;
+}
+
+.input-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+
+.form-one-input { width: 100%; }
+.form-two-input { width: 50%; }
+.form-two-input:first-of-type { margin-right: 10px; }
+
+.form-two-input.split {
+  width: 100%;
+  margin-right: 0;
+}
+
+label {
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid #cecece;
+  height: 25px;
+  font-size: 0.8em;
+  padding: 13px 7px;
+}
+
+textarea {
+  border-radius: 5px;
+  border: 1px solid #cecece;
+  height: 200px;
+  font-size: 0.8em;
+  padding: 13px 7px;
+}

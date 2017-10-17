@@ -1,6 +1,5 @@
 import React from 'react'
 
-import './member-form.css'
 
 const MemberForm = ({ onSubmit, handleChange }) => (
   <div>
