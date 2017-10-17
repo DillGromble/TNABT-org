@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
-import MemberFormComponent from './index'
+import MemberFormComponent from './component'
+import PopupForm from '../../../../components/Popup-Form/PopupForm'
 
 
 export default class MembershipForm extends Component {
@@ -18,7 +19,6 @@ export default class MembershipForm extends Component {
       school: '',
       classes: ''
     }
-
     this.onSubmit = this.onSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
@@ -34,14 +34,11 @@ export default class MembershipForm extends Component {
     console.log(this.state)
   }
 
-
   render() {
     return (
-      <MemberFormComponent
-        {...this.props}
-        onSubmit={this.onSubmit}
-        handleChange={this.handleChange}
-      />
+      <PopupForm {...this.props} header="TNABT Membership Form">
+        <MemberFormComponent onSubmit={this.onSubmit} handleChange={this.handleChange} />
+      </PopupForm>
     )
   }
 }
