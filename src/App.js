@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
+import ContactUs from './components/Contact-Us/container'
+
 
 import './index.css'
 import './grid.css'
@@ -33,13 +35,17 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
+        <ContactUs
+          isVisible={this.state.popupShown ? 'popup-show' : ''}
+          closeWindow={this.togglePopup}
+        />
         {
           React.cloneElement(
             this.props.children,
             { togglePopup: this.togglePopup }
           )
         }
-        <Footer />
+        <Footer togglePopup={ this.togglePopup }/>
       </div>
     );
   }
