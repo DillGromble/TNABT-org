@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import PopupForm from '../Popup-Form/PopupForm'
 import ContactComponent from './component'
@@ -26,8 +27,11 @@ export default class ContactForm extends Component {
 
   onSubmit(e) {
     e.preventDefault()
-    console.log(this.state)
+    axios.post('/api/mailer/contact-us', this.state)
+      .then(res => console.log(res.data))
+      .catch(err => console.error(err))
   }
+
 
   render() {
     return (

@@ -1,24 +1,17 @@
 {
-  "name": "tnabt",
-  "version": "0.1.0",
-  "private": true,
+  "name": "TNABT-org",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DillGromble/TNABT-org.git",
+  "author": "Josh White <whitejosh42@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-responsive-carousel": "^3.1.27",
-    "react-router": "3.0.5",
-    "react-scripts": "1.0.13"
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "homepage": "https://dillgromble.github.io/TNABT-org/",
-  "devDependencies": {
-    "gh-pages": "^1.0.0"
+    "start": "nodemon server/index.js"
   }
 }
