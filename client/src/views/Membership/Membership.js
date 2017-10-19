@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 import Header from '../../components/Header/Header'
 
@@ -16,13 +15,6 @@ export default class Membership extends Component {
     super(props)
     this.state = { showForm: false }
     this.toggleForm = this.toggleForm.bind(this)
-  }
-
-
-  componentWillMount() {
-    axios.get('/api/hello')
-      .then(res => { console.log(res.data) })
-      .catch(err => { console.error(err) })
   }
 
 

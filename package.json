@@ -1,6 +1,17 @@
 {
+  "name": "TNABT-org",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DillGromble/TNABT-org.git",
+  "author": "Josh White <whitejosh42@gmail.com>",
+  "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.1"
+  },
+  "scripts": {
+    "start": "nodemon server/index.js"
   }
 }

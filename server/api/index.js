@@ -1,7 +1,9 @@
 const router = require('express').Router()
 
-router.get('/hello', (req, res) => {
-  res.send('hello')
-})
+
+router
+  .use('/mailer', require('./mailer'))
+  .use('/apply', require('./apply'))
+
 
 module.exports = router
