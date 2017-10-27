@@ -1,9 +1,19 @@
 const router = require('express').Router()
-
+const Member = require('../../db/Members')
 
 router.post('/membership', (req, res) => {
-  console.log(req.body)
-  res.sendStatus(200)
+  const testMember = Member(req.body)
+
+
+  testMember.save(function (err) {
+    if (err) throw err
+    console.log('user created!')
+  })
+
+  Member.find({}, function (err, found) {
+    if (err) throw err
+    console.log(found)
+  })
 })
 
 module.exports = router
