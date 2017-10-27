@@ -1,8 +1,9 @@
 const router = require('express').Router()
-
+const sendMail = require('../services/mailer')
 
 router.post('/contact-us', (req, res) => {
-  console.log(req.body)
+  const { fname, lname, email, subject, message } = req.body
+  sendMail(fname, lname, email, subject, message)
   res.sendStatus(200)
 })
 

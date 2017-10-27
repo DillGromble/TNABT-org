@@ -3,7 +3,7 @@ const Member = require('../../db/Members')
 
 router.post('/membership', (req, res) => {
   const testMember = Member(req.body)
-  // console.log('testMember:', testMember)
+
 
   testMember.save(function (err) {
     if (err) throw err
