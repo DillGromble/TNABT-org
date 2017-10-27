@@ -20,9 +20,9 @@
 
 .form-header h3 {
   color: #f4f4f4;
-  font-size: 1.3em;
+  font-size: 1.5em;
   text-align: center;
-  padding-top: 25px;
+  padding-top: 20px;
 }
 
 
@@ -38,6 +38,7 @@
 
 form {
   margin: 15px 40px;
+  height: 533px;
 }
 
 .form-group {
@@ -81,7 +82,78 @@ input {
 textarea {
   border-radius: 5px;
   border: 1px solid #cecece;
-  height: 200px;
+  height: 140px;
   font-size: 0.8em;
   padding: 13px 7px;
+  resize: none;
+}
+
+.form-submit {
+  z-index: 100;
+  position: relative;
+  margin: 21px auto;
+  display: block;
+}
+
+
+
+/*--------------------------------Queries-------------------------------------*/
+@media only screen and (max-width: 1023px) {
+  .form-popup {
+    height: 635px;
+    width: 635px;
+    margin-left: -317.5px;
+    margin-top: -317.5px;
+   }
+
+   .form-header h3 { padding-top: 24px; }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .form-popup {
+    height: 600px;
+    width: 600px;
+    margin-left: -300px;
+    margin-top: -300px;
+   }
+
+  .form-header h3 { font-size: 1.6em; }
+  textarea { height: 100px; }
+  .form-submit { margin: 33px auto; }
+}
+
+
+@media only screen and (max-width: 650px) {
+  .form-popup {
+    width: 450px;
+    margin-left: -225px;
+   }
+
+   textarea { height: 100px; }
+   .form-submit { margin: 33px auto; }
+}
+
+
+@media only screen and (max-width: 450px) {
+  .form-popup {
+    width: 100vw;
+    left: 0;
+    margin-left: 0;
+   }
+   .member-form-group { margin: 0 !important; }
+   .member-input-group { margin: 7px 0; }
+   form { margin: 15px; }
+}
+
+
+@media only screen and (max-width: 320px) {
+  .form-popup {
+    width: 100vw;
+    left: 0;
+    margin-left: 0;
+   }
+
+   form { margin: 15px; }
+   .form-header h3 { padding-top: 32px; }
 }

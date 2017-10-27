@@ -40,7 +40,7 @@ export default class MembershipForm extends Component {
 
   render() {
     return (
-      <PopupForm {...this.props} header="TNABT Membership Form">
+      <PopupForm {...this.props} header="Membership Form">
         <MemberFormComponent onSubmit={this.onSubmit} handleChange={this.handleChange} />
       </PopupForm>
     )

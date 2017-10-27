@@ -11,7 +11,6 @@ const transporter = nodemailer.createTransport({
 
 const getDate = () => moment().format('MMMM Do YYYY')
 
-
 const sendMail = (fname, lname, senderAddr, msgSubject, msgText) => {
 
   const responseSubject = encodeURIComponent(`Response to: ${msgSubject}`)

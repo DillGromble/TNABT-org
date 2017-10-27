@@ -70,6 +70,7 @@ section { padding: 80px; }
   visibility: hidden;
 }
 
+.pos-relative { position: relative; }
 /*--------------------------------Headers-------------------------------------*/
 
 h1, h2, h3 { font-weight: 300; }
