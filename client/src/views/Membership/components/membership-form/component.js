@@ -4,10 +4,10 @@ import React from 'react'
 const MemberForm = ({ onSubmit, handleChange }) => (
   <div>
     <form onSubmit={onSubmit}>
-      <div className="row form-group">
+      <div className="row form-group member-form-group">
         <label htmlFor="name">Name:</label>
         <br />
-        <div className="input-group">
+        <div className="input-group member-input-group">
           <input
             className="form-two-input"
             type="text"
@@ -25,10 +25,10 @@ const MemberForm = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <div className="row form-group">
+      <div className="row form-group member-form-group">
         <label htmlFor="address">Address:</label>
         <br />
-        <div className="input-group">
+        <div className="input-group member-input-group">
           <input
             className="form-one-input"
             type="text"
@@ -37,7 +37,7 @@ const MemberForm = ({ onSubmit, handleChange }) => (
             onChange={handleChange}
           />
         </div>
-        <div className="input-group">
+        <div className="input-group member-input-group">
           <input
             className="form-two-input"
             type="text"
@@ -55,11 +55,11 @@ const MemberForm = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <div className="row form-group">
+      <div className="row form-group member-form-group">
         <div className="col span-1-of-2">
           <label htmlFor="phone">Phone:</label>
           <br />
-          <div className="input-group">
+          <div className="input-group member-input-group">
             <input
               className="form-two-input split"
               type="tel"
@@ -73,7 +73,7 @@ const MemberForm = ({ onSubmit, handleChange }) => (
         <div className="col span-1-of-2">
           <label htmlFor="email">Email:</label>
           <br />
-          <div className="input-group">
+          <div className="input-group member-input-group">
             <input
               className="form-two-input split"
               type="email"
@@ -85,11 +85,11 @@ const MemberForm = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <div className="row form-group">
+      <div className="row form-group member-form-group">
         <div className="col span-1-of-2">
           <label htmlFor="school">Institution:</label>
           <br />
-          <div className="input-group">
+          <div className="input-group member-input-group">
             <input
               className="form-two-input split"
               type="text"
@@ -103,7 +103,7 @@ const MemberForm = ({ onSubmit, handleChange }) => (
         <div className="col span-1-of-2">
           <label htmlFor="classes">Classes Taught:</label>
           <br />
-          <div className="input-group">
+          <div className="input-group member-input-group">
             <input
               className="form-two-input split"
               type="text"
@@ -115,12 +115,11 @@ const MemberForm = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <button type="submit">Submit</button>
+      <button className="btn btn-ghost form-submit" type="submit">Submit</button>
     </form>
 
 
-    <footer className="form-footer">
-    </footer>
+
   </div>
 )
 

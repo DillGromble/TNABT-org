@@ -5,7 +5,7 @@ const ConactFormComponent = ({ onSubmit, handleChange }) => (
   <div>
     <form onSubmit={onSubmit}>
 
-      <div className="row form-group">
+      <div className="form-group">
         <label htmlFor="name">Name:</label>
         <br />
         <div className="input-group">
@@ -26,7 +26,7 @@ const ConactFormComponent = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <div className="row form-group">
+      <div className="form-group">
         <label htmlFor="email">Email:</label>
         <br />
         <div className="input-group">
@@ -40,7 +40,7 @@ const ConactFormComponent = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <div className="row form-group">
+      <div className="form-group">
         <label htmlFor="subject">Subject:</label>
         <br />
         <div className="input-group">
@@ -54,7 +54,7 @@ const ConactFormComponent = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <div className="row form-group">
+      <div className="form-group">
         <label htmlFor="message">Message:</label>
         <br />
         <div className="input-group">
@@ -68,7 +68,7 @@ const ConactFormComponent = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <button type="submit">Submit</button>
+      <button className="btn btn-ghost form-submit" type="submit">Send!</button>
     </form>
 
   </div>
