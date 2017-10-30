@@ -1,16 +1,20 @@
-.form-popup {
+.popup {
   width: 650px;
-  height: 650px;
+  margin-left: -325px;
   background-color: white;
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-left: -325px;
-  margin-top: -325px;
   z-index: -999;
   opacity: 0;
   transition: opacity 0.3s;
 }
+
+.form-popup {
+  height: 650px;
+  margin-top: -325px;
+}
+
 
 .form-header {
   width: 100%;
@@ -36,7 +40,7 @@
 }
 
 
-form {
+.form-tall {
   margin: 15px 40px;
   height: 533px;
 }

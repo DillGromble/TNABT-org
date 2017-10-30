@@ -35,7 +35,7 @@ export default class ContactForm extends Component {
 
   render() {
     return (
-      <PopupForm {...this.props} header="Contact Us!">
+      <PopupForm {...this.props} header="Contact Us!" type="form">
         <ContactComponent onSubmit={this.onSubmit} handleChange={this.handleChange} />
       </PopupForm>
     )

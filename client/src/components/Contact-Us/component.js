@@ -3,7 +3,7 @@ import React from 'react'
 
 const ContactFormComponent = ({ onSubmit, handleChange }) => (
   <div>
-    <form onSubmit={onSubmit}>
+    <form className="form-tall" onSubmit={onSubmit}>
 
       <div className="form-group">
         <label htmlFor="name">Name:</label>

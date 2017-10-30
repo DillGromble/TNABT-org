@@ -5,7 +5,7 @@ import './membership-form.css'
 
 const MemberForm = ({ onSubmit, handleChange }) => (
   <div>
-    <form onSubmit={onSubmit}>
+    <form className="form-tall" onSubmit={onSubmit}>
       <div className="member-form-group">
         <label htmlFor="name">Name:</label>
         <br />

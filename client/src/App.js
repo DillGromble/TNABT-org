@@ -41,7 +41,6 @@ class App extends Component {
 
 
   toggleAuth() {
-    console.log('auth!')
     this.setState({
       authShown: !this.state.authShown,
       bgDisabled: !this.state.bgDisabled
