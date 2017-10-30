@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import ContactUs from './components/Contact-Us/container'
+import Login from './components/Auth/Login'
 
 import './index.css'
 import './grid.css'
@@ -12,38 +13,57 @@ import './grid.css'
 class App extends Component {
   constructor() {
     super()
-    this.state = ({ popupShown: false })
-    this.togglePopup = this.togglePopup.bind(this)
+    this.state = ({
+      contactShown: false,
+      authShown: false,
+      bgDisabled: false
+    })
+    this.toggleAuth = this.toggleAuth.bind(this)
+    this.toggleContact = this.toggleContact.bind(this)
   }
 
 
   componentDidUpdate() {
     const scrollbarWidthPx = window.innerWidth - document.body.clientWidth
-    const [overflow, marginRight] = this.state.popupShown
+    const [overflow, marginRight] = this.state.bgDisabled
       ? ['hidden', `${scrollbarWidthPx}px`]
       : ['', '0px']
     Object.assign(document.body.style, { overflow, marginRight })
   }
 
 
-  togglePopup() {
-    this.setState({ popupShown: !this.state.popupShown })
+  toggleContact() {
+    this.setState({
+      contactShown: !this.state.contactShown,
+      bgDisabled: !this.state.bgDisabled
+    })
+  }
+
+
+  toggleAuth() {
+    this.setState({
+      authShown: !this.state.authShown,
+      bgDisabled: !this.state.bgDisabled
+    })
   }
 
 
   render() {
-    const popupShow = this.state.popupShown ? 'popup-show' : ''
+    const authShow = this.state.authShown ? 'popup-show' : ''
+    const popupShow = this.state.contactShown ? 'popup-show' : ''
+
     return (
       <div className="App">
-        <Navbar />
-        <ContactUs isVisible={popupShow} closeWindow={this.togglePopup} />
+        <Navbar toggleAuth={this.toggleAuth} />
+        <Login isVisible={authShow} closeWindow={this.toggleAuth} />
+        <ContactUs isVisible={popupShow} closeWindow={this.toggleContact} />
         {
           React.cloneElement(
             this.props.children,
-            { togglePopup: this.togglePopup }
+            { toggleContact: this.toggleContact, toggleAuth: this.toggleAuth }
           )
         }
-        <Footer togglePopup={this.togglePopup} />
+        <Footer toggleContact={this.toggleContact} />
       </div>
     )
   }

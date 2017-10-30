@@ -10,6 +10,7 @@ import Membership from './views/Membership/Membership'
 import Awards from './views/Awards-Service/Awards'
 import Resources from './views/Resources/Resources'
 
+
 ReactDOM.render(
   <Router onUpdate={() => window.scrollTo(0, 0)} history={hashHistory} >
     <Route path="/" component={App}>

@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Footer.css'
 
-const Footer = ({ togglePopup }) => (
+const Footer = ({ toggleContact }) => (
   <footer>
     <div className="footer-banner" />
     <div className="footer">
@@ -14,7 +14,7 @@ const Footer = ({ togglePopup }) => (
       </div>
 
       <div className="footer-icons footer-content">
-        <i className="ion-email contact-us" onClick={togglePopup}></i>
+        <i className="ion-email contact-us" onClick={toggleContact}></i>
         <i className="ion-social-facebook facebook"></i>
       </div>
 

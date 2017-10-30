@@ -15,6 +15,5 @@ const memberSchema = new Schema({
   updated_at: Date
 })
 
-const Member = mongoose.model('Member', memberSchema)
 
-module.exports = Member
+module.exports = mongoose.model('Member', memberSchema)

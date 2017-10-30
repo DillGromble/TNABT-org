@@ -1,9 +1,9 @@
 import React from 'react'
 
 
-const ConactFormComponent = ({ onSubmit, handleChange }) => (
+const ContactFormComponent = ({ onSubmit, handleChange }) => (
   <div>
-    <form onSubmit={onSubmit}>
+    <form className="form-tall" onSubmit={onSubmit}>
 
       <div className="form-group">
         <label htmlFor="name">Name:</label>
@@ -74,4 +74,4 @@ const ConactFormComponent = ({ onSubmit, handleChange }) => (
   </div>
 )
 
-export default ConactFormComponent
+export default ContactFormComponent

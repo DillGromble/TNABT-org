@@ -42,9 +42,8 @@
   transition: all ease 250ms;
 }
 
-.main-nav li:hover::after {
-  width: 100%;
-}
+.main-nav li:hover { cursor: pointer; }
+.main-nav li:hover::after { width: 100%; }
 
 
 
