@@ -6,39 +6,37 @@ import './Navbar.css'
 
 class Navbar extends Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = ({
       hamburgerOpen: false,
       mobileLinkState: '',
       hamburgerIcon: 'ion-navicon-round'
     })
 
-    this.toggleDropdown = this.toggleDropdown.bind(this)
+    this.toggleMobileNav = this.toggleMobileNav.bind(this)
     this.handleMobileClick = this.handleMobileClick.bind(this)
   }
 
 
-  toggleDropdown() {
+  toggleMobileNav() {
     const hamburgerOpen = !this.state.hamburgerOpen
-
     const [ hamburgerIcon, mobileLinkState ] = hamburgerOpen
       ? ['ion-close-round close-icon', 'mobile-nav-open']
       : ['ion-navicon-round', '']
-
     document.body.style.overflow = hamburgerOpen ? 'hidden' : ''
     this.setState({ hamburgerOpen, mobileLinkState, hamburgerIcon })
   }
 
 
   handleMobileClick() {
-    if (this.state.hamburgerOpen) this.toggleDropdown()
+    if (this.state.hamburgerOpen) this.toggleMobileNav()
   }
 
 
   render() {
     const { hamburgerIcon, mobileLinkState } = this.state
-    const { handleMobileClick, toggleDropdown } = this
+    const { handleMobileClick, toggleMobileNav } = this
 
     return (
       <nav className="nav-container">
@@ -50,7 +48,7 @@ class Navbar extends Component {
           />
         </Link>
 
-        <i className={`${hamburgerIcon} mobile-nav`} onClick={toggleDropdown} />
+        <i className={`${hamburgerIcon} mobile-nav`} onClick={toggleMobileNav} />
         <ul className={`main-nav ${mobileLinkState}`} onClick={ handleMobileClick }>
           <li>
             <Link to="/about">About Us</Link>
@@ -64,7 +62,9 @@ class Navbar extends Component {
           <li>
             <Link to="/resources">Resources</Link>
           </li>
-          <li>Login</li>
+          <li>
+            <a onClick={ this.props.toggleAuth }>Login</a>
+          </li>
         </ul>
       </nav>
     )
