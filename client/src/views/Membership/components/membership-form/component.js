@@ -1,10 +1,12 @@
 import React from 'react'
 
+import './membership-form.css'
+
 
 const MemberForm = ({ onSubmit, handleChange }) => (
   <div>
     <form onSubmit={onSubmit}>
-      <div className="row form-group member-form-group">
+      <div className="member-form-group">
         <label htmlFor="name">Name:</label>
         <br />
         <div className="input-group member-input-group">
@@ -25,7 +27,7 @@ const MemberForm = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <div className="row form-group member-form-group">
+      <div className="member-form-group">
         <label htmlFor="address">Address:</label>
         <br />
         <div className="input-group member-input-group">
@@ -55,7 +57,7 @@ const MemberForm = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <div className="row form-group member-form-group">
+      <div className="member-form-group clearfix">
         <div className="col span-1-of-2">
           <label htmlFor="phone">Phone:</label>
           <br />
@@ -85,7 +87,7 @@ const MemberForm = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <div className="row form-group member-form-group">
+      <div className="member-form-group clearfix">
         <div className="col span-1-of-2">
           <label htmlFor="school">Institution:</label>
           <br />
@@ -115,7 +117,7 @@ const MemberForm = ({ onSubmit, handleChange }) => (
         </div>
       </div>
 
-      <button className="btn btn-ghost form-submit" type="submit">Submit</button>
+      <button className="btn btn-ghost member-form-submit" type="submit">Submit</button>
     </form>
 
 

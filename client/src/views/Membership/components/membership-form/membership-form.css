@@ -1,0 +1,32 @@
+.member-form-submit {
+  z-index: 100;
+  position: relative;
+  margin: 59px auto 0 auto;
+  display: block;
+}
+
+.member-form-group {
+  margin: 5px 0;
+  padding: 7px 0;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+  .member-form-submit { margin-top: 33px; }
+}
+
+@media only screen and (max-width: 650px) {
+  .member-form-submit { margin-top: 39px; }
+}
+
+@media only screen and (max-width: 480px) {
+  .member-form-group {
+    margin: 0 !important;
+    padding: 0;
+  }
+  .member-input-group { margin: 7px 0; }
+  .member-form-submit { margin-top: 32px; }
+}
+
+
