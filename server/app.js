@@ -11,8 +11,6 @@ const Account = require('../db/account')
 
 const app = express()
 
-// passport.serializeUser((user, done) => done(null, user.id))
-// passport.deserializeUser((id, done) => )
 
 app
   .use(morgan('dev'))
