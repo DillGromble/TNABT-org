@@ -9,6 +9,11 @@ router
     res.status(200).send(req.user)
   })
 
+  .post('/logout', (req, res, next) => {
+    req.logout()
+    res.status(200).send(req.user)
+  })
+
   .post('/register', (req, res, next) =>
     Account.register(
       new Account({ username: req.body.username }), req.body.password, (err, account) => {

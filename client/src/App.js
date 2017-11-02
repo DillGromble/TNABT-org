@@ -18,11 +18,12 @@ class App extends Component {
       contactShown: false,
       authShown: false,
       bgDisabled: false,
-      user: null
+      user: {}
     })
     this.toggleAuth = this.toggleAuth.bind(this)
     this.toggleContact = this.toggleContact.bind(this)
     this.setUser = this.setUser.bind(this)
+    this.logoutUser = this.logoutUser.bind(this)
   }
 
 
@@ -41,9 +42,15 @@ class App extends Component {
 
 
   setUser() {
-    console.log('before finding user: ', this.state.user)
     axios.get('/api/auth/me')
       .then(res => this.setState({ user: res.data || {} }, () => console.log(this.state.user)))
+      .catch(err => console.error(err))
+  }
+
+
+  logoutUser() {
+    axios.post('/api/auth/logout')
+      .then(res => this.setState({ user: res.data }, () => console.log('logged out: ', this.state.user)))
       .catch(err => console.error(err))
   }
 
@@ -65,13 +72,13 @@ class App extends Component {
 
 
   render() {
-    const { toggleAuth, setUser, toggleContact } = this
+    const { toggleAuth, setUser, toggleContact, logoutUser } = this
     const authShow = this.state.authShown ? 'popup-show' : ''
     const popupShow = this.state.contactShown ? 'popup-show' : ''
 
     return (
       <div className="App">
-        <Navbar toggleAuth={toggleAuth} />
+        <Navbar toggleAuth={toggleAuth} user={this.state.user} logoutUser={logoutUser}/>
         <Login isVisible={authShow} closeWindow={toggleAuth} setUser={setUser}/>
         <ContactUs isVisible={popupShow} closeWindow={toggleContact} />
         {
