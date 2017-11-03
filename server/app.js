@@ -20,7 +20,7 @@ app
   .use(bodyParser.urlencoded({ extended: true }))
 
   .use(session({
-    secret: 'doot is the word',
+    secret: process.env.SECRET || 'doot is the word',
     resave: false,
     saveUninitialized: false
   }))
