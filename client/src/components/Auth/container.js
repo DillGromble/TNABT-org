@@ -37,7 +37,6 @@ export default class ContactForm extends Component {
   }
 
   resetFields() {
-    this.props.closeWindow()
     this.setState({ username: '', password: '' })
   }
 
@@ -47,6 +46,8 @@ export default class ContactForm extends Component {
     return (
       <PopupForm {...this.props} resetForm={resetFields} header="Login" type="auth">
         <LoginComponent
+          closeWindow={this.props.closeWindow}
+          resetForm={resetFields}
           onSubmit={onSubmit}
           handleChange={handleChange}
           emailVal={username}

@@ -55,19 +55,21 @@ class App extends Component {
   }
 
 
-  toggleContact() {
+  toggleContact(clearFunc) {
     this.setState({
       contactShown: !this.state.contactShown,
       bgDisabled: !this.state.bgDisabled
     })
+    if (typeof clearFunc === 'function') clearFunc()
   }
 
 
-  toggleAuth() {
+  toggleAuth(clearFunc) {
     this.setState({
       authShown: !this.state.authShown,
       bgDisabled: !this.state.bgDisabled
     })
+    if (typeof clearFunc === 'function') clearFunc()
   }
 
 

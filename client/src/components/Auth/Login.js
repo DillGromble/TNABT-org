@@ -4,12 +4,13 @@ import { Link } from 'react-router'
 
 import './login.css'
 
-const Login = ({ resetForm, onSubmit, handleChange, emailVal, passVal }) => (
+const Login = ({ closeWindow, resetForm, onSubmit, handleChange, emailVal, passVal }) => (
   <div>
     <div className="auth-container">
       <div className="auth-inputs">
         <form className="form-auth" onSubmit={onSubmit}>
           <input
+            className="form-input"
             type="email"
             name="username"
             placeholder="E-mail Address"
@@ -17,6 +18,7 @@ const Login = ({ resetForm, onSubmit, handleChange, emailVal, passVal }) => (
             value={emailVal}
           />
           <input
+            className="form-input"
             type="password"
             name="password"
             placeholder="Password"
@@ -39,7 +41,7 @@ const Login = ({ resetForm, onSubmit, handleChange, emailVal, passVal }) => (
 
     <p className="auth-footer">
       Not a member? Check out our &nbsp;
-      <Link to="/membership" onClick={resetForm}>Membership</Link>
+      <Link to="/membership" onClick={() => { closeWindow(); resetForm(); }}>Membership</Link>
       &nbsp; page!
     </p>
   </div>
