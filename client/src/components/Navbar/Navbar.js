@@ -62,9 +62,20 @@ class Navbar extends Component {
           <li>
             <Link to="/resources">Resources</Link>
           </li>
-          <li>
-            <a onClick={ this.props.toggleAuth }>Login</a>
-          </li>
+
+          {
+            this.props.user.username
+              ?
+                <li>
+                  <a onClick={ this.props.logoutUser }>Logout</a>
+                </li>
+              :
+                <li>
+                  <a onClick={ this.props.toggleAuth }>Login</a>
+                </li>
+          }
+
+
         </ul>
       </nav>
     )
