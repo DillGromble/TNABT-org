@@ -11,17 +11,11 @@ router
   })
 
   .post('/apply', (req, res) => {
-    const testMember = Member(req.body)
-
-    testMember.save(function (err) {
-      if (err) throw err
-      console.log('user created!')
-    })
-
-    Member.find({}, function (err, found) {
-      if (err) throw err
-      console.log(found)
-    })
+    Member.create(req.body, (err, member) => {
+        if (err) throw err
+        console.log('user created: ', member)
+        res.status(200).send()
+      })
   })
 
 

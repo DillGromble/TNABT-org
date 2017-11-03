@@ -4,19 +4,22 @@ import axios from 'axios'
 import PopupForm from '../Popup-Form/PopupForm'
 import ContactComponent from './component'
 
+
 export default class ContactForm extends Component {
 
   constructor(props) {
     super(props)
-    this.state = {
+    this.initialState = {
       fname: '',
       lname: '',
       email: '',
       subject: '',
       message: ''
     }
+    this.state = Object.assign({}, this.initialState)
     this.onSubmit = this.onSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.resetFields = this.resetFields.bind(this)
   }
 
 
@@ -33,10 +36,25 @@ export default class ContactForm extends Component {
   }
 
 
+  resetFields() {
+    this.setState(this.initialState)
+  }
+
+
   render() {
+    const { resetFields, onSubmit, handleChange } = this
+    const { fname, lname, email, subject, message } = this.state
     return (
-      <PopupForm {...this.props} header="Contact Us!" type="form">
-        <ContactComponent onSubmit={this.onSubmit} handleChange={this.handleChange} />
+      <PopupForm {...this.props} resetForm={resetFields} header="Contact Us!" type="form">
+        <ContactComponent
+          onSubmit={onSubmit}
+          handleChange={handleChange}
+          fname={fname}
+          lname={lname}
+          email={email}
+          subject={subject}
+          message={message}
+        />
       </PopupForm>
     )
   }

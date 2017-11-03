@@ -70,12 +70,12 @@
   margin-right: 0;
 }
 
-label {
+.form-label {
   font-weight: 400;
   font-size: 0.9em;
 }
 
-input {
+.form-input {
   border-radius: 5px;
   border: 1px solid #cecece;
   height: 25px;
@@ -83,7 +83,7 @@ input {
   padding: 13px 7px;
 }
 
-textarea {
+.form-textarea {
   border-radius: 5px;
   border: 1px solid #cecece;
   height: 140px;

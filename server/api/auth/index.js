@@ -5,14 +5,34 @@ const passport = require('passport')
 router
   .get('/me', (req, res, next) => { res.json(req.user) })
 
-  .post('/login', passport.authenticate('local'), (req, res, next) => {
-    res.status(200).send(req.user)
+
+  // .post('/login', passport.authenticate('local'), (req, res, next) => {
+  //   res.status(200).send(req.user)
+  // })
+
+
+  .post('/login', (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+      console.log('user: ', user)
+      console.log('err: ', err)
+      console.log('info: ', info)
+      if (err) return next(err)
+      if (!user) {
+        return res.send({ success: false, message: 'authentication failed'})
+      }
+      req.login(user, loginErr => {
+        if (loginErr) return next(loginErr)
+        return res.send({success: true, message: 'authentication success'})
+      })
+    })(req, res, next)
   })
+
 
   .post('/logout', (req, res, next) => {
     req.logout()
     res.status(200).send(req.user)
   })
+
 
   .post('/register', (req, res, next) =>
     Account.register(
