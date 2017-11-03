@@ -16,13 +16,12 @@ export default class ContactForm extends Component {
     }
     this.onSubmit = this.onSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.resetFields = this.resetFields.bind(this)
   }
-
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value })
   }
-
 
   onSubmit(e) {
     e.preventDefault()
@@ -30,18 +29,29 @@ export default class ContactForm extends Component {
       .then(res => {
         if (res.status === 200) {
           this.props.setUser()
-          this.props.closeWindow()
+          this.resetFields()
           hashHistory.push('/home')
         }
       })
       .catch(err => console.error(err))
   }
 
+  resetFields() {
+    this.props.closeWindow()
+    this.setState({ username: '', password: '' })
+  }
 
   render() {
+    const { onSubmit, handleChange, resetFields } = this
+    const { username, password } = this.state
     return (
-      <PopupForm {...this.props} header="Login" type="auth">
-        <LoginComponent onSubmit={this.onSubmit} handleChange={this.handleChange} />
+      <PopupForm {...this.props} resetForm={resetFields} header="Login" type="auth">
+        <LoginComponent
+          onSubmit={onSubmit}
+          handleChange={handleChange}
+          emailVal={username}
+          passVal={password}
+        />
       </PopupForm>
     )
   }
