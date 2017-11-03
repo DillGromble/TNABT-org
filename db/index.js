@@ -1,11 +1,7 @@
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/test', { useMongoClient: true })
+mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true })
 
 const db = mongoose.connection
 
 db.on('error', console.error.bind(console, 'connection error:'))
-
-db.once('open', function () {
-  console.log('mongo connected')
-})
-
+db.once('open', () => { console.log.bind(console, 'mongo connected') })

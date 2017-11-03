@@ -14,7 +14,7 @@ router
       new Account({ username: req.body.username }), req.body.password, (err, account) => {
         if (err) {
           console.error('Registration error: ', err)
-          next(err)
+          return next(err)
         }
         passport.authenticate('local')(req, res, function () {
           res.status(200).send(account);

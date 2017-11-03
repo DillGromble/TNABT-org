@@ -32,7 +32,7 @@ export default class MembershipForm extends Component {
 
   onSubmit(e) {
     e.preventDefault()
-    axios.post('/api/apply/membership', this.state)
+    axios.post('/api/membership/apply', this.state)
       .then(res => console.log(res.data))
       .catch(err => console.error(err))
   }
