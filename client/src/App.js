@@ -43,7 +43,7 @@ class App extends Component {
 
   setUser() {
     axios.get('/api/auth/me')
-      .then(res => this.setState({ user: res.data || {} }, () => console.log(this.state.user)))
+      .then(res => this.setState({ user: res.data || {} }))
       .catch(err => console.error(err))
   }
 

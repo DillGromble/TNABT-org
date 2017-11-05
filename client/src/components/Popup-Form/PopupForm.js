@@ -7,7 +7,10 @@ const PopupForm = ({ closeWindow, isVisible, header, children, type, resetForm }
     <div className={`popup ${type}-popup ${isVisible} `}>
       <i
         className="ion-close-round popup-exit-icon"
-        onClick={() => { closeWindow(); resetForm(); }}
+        onClick={() => {
+          closeWindow()
+          if (typeof resetForm === 'function') resetForm()
+        }}
       />
       <div>
         <header className="form-header">
