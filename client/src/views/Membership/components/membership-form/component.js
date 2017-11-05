@@ -1,7 +1,5 @@
 import React from 'react'
 
-import PayPalBtn from './paypal'
-
 import './membership-form.css'
 
 
@@ -149,12 +147,7 @@ const MemberForm = ({
 
       <button className="btn btn-ghost member-form-submit" type="submit">Next ></button>
 
-
-
     </form>
-    <PayPalBtn />
-
-
   </div>
 )
 

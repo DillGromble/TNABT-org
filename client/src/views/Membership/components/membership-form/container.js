@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 
 import MemberFormComponent from './component'
 import PopupForm from '../../../../components/Popup-Form/PopupForm'
-
+import PayPalPage from './Paypal/paypal'
 
 export default class MembershipForm extends Component {
 
@@ -55,7 +55,7 @@ export default class MembershipForm extends Component {
         {
           this.state.formComplete
           ?
-            <h3>Time to pay me now</h3>
+            <PayPalPage firstname={fname} email={email}/>
           :
             <MemberFormComponent
               onSubmit={onSubmit}

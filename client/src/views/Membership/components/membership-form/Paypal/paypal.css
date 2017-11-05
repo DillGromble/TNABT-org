@@ -1,0 +1,35 @@
+.paypal-header {
+  text-align: center;
+  margin: 30px auto;
+  font-size: 1.3em;
+  color: #393939;
+}
+
+.paypal-subheader {
+  text-align: center;
+  font-size: 1em;
+  margin: 30px auto;
+}
+
+.payment-option {
+  margin: 60px auto;
+  padding: 20px;
+  background-color: #F4F4F4;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.payment-description {
+  width: 40%;
+}
+
+.paypal-footer {
+  z-index: 10;
+  position: relative;
+  color: #f4f4f4;
+  text-align: center;
+  width: 75%;
+  margin-top: 77px;
+  font-size: 0.9em;
+}
