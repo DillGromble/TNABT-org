@@ -24,11 +24,12 @@ router
       }
     }
 
-    console.log(req.body)
+    // console.log(req.body)
 
     axios.post(getURI(), responseBody)
       .then(resp => resp.data)
       .then(verification => {
+        console.log('post verification is: ', verification)
         if (verification === 'VERIFIED') {
           // payment verified: update member status and send account creation mail
           console.log(`Verified IPN: Transaction ID: ${req.body.txn_id} is verified.`)
