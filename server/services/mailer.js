@@ -39,12 +39,11 @@ const sendContactMail = (fname, lname, senderAddr, msgSubject, msgText) => {
 const sendAccountMail = (member) => {
   console.log('SENDING ACCOUNT MAIL TO NEW MEMBER')
   console.log(member)
-  const responseSubject = encodeURIComponent('Your TNABT Membership Verification')
 
   const mailOptions = {
     from: 'mailer.tnabt@gmail.com',
     to: member.email,
-    subject: responseSubject,
+    subject: 'Your TNABT Membership Verification',
     text: 'Thank you for registering as a member of the TNABT!'
   }
 

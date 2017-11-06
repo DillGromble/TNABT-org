@@ -30,7 +30,7 @@ router
       .then(resp => resp.data)
       .then(verification => {
         console.log('post verification is: ', verification)
-        if (verification === 'VERIFIED') {
+        if (req.body.txn_id && verification === 'VERIFIED') {
           // payment verified: update member status and send account creation mail
           console.log(`Verified IPN: Transaction ID: ${req.body.txn_id} is verified.`)
           Member.findOneAndUpdate({ email: req.body.custom }, { account_active: true },
