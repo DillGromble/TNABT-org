@@ -11,7 +11,6 @@ const Account = require('../db/account')
 
 const app = express()
 
-
 app
   .use(morgan('dev'))
   .use(express.static(path.resolve(__dirname, '..', 'client/build')))

@@ -2,6 +2,10 @@ const router = require('express').Router()
 const axios = require('axios')
 const querystring = require('querystring')
 
+const getURI = () => process.env.NODE_ENV === 'dev'
+  ? 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'
+  : 'https://ipnpb.paypal.com/cgi-bin/webscr'
+
 
 router
   .post('/', (req, res, next) => {
@@ -16,16 +20,14 @@ router
       }
     }
 
-    console.log(responseBody)
-
-    axios.post('https://ipnpb.sandbox.paypal.com/cgi-bin/webscr', responseBody)
+    axios.post(getURI(), responseBody)
       .then(resp => resp.data)
       .then(verification => {
         if (verification === 'VERIFIED') {
-          console.log(`Verified IPN: IPN message for Transaction ID: ${req.body.txn_id} is verified.`)
+          console.log(`Verified IPN: Transaction ID: ${req.body.txn_id} is verified.`)
         }
         else if (verification === 'INVALID') {
-          console.error(`Invalid IPN: IPN message for Transaction ID: ${req.body.txn_id} is invalid.`)
+          console.error(`Invalid IPN: Transaction ID: ${req.body.txn_id} is invalid.`)
         }
         else {
           console.error('Unexpected response body')
