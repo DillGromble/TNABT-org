@@ -12,6 +12,11 @@ router
 
   .post('/apply', (req, res) => {
 
+    Member.remove({}, (err) => {
+      if (err) console.error(err)
+      console.log('members removed')
+    })
+
     Member.create(req.body, (err, member) => {
         if (err) throw err
         console.log('user created: ', member)
