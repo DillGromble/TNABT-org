@@ -6,11 +6,6 @@ router
   .get('/me', (req, res, next) => { res.json(req.user) })
 
 
-  // .post('/login', passport.authenticate('local'), (req, res, next) => {
-  //   res.status(200).send(req.user)
-  // })
-
-
   .post('/login', (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
       console.log('user: ', user)
@@ -48,4 +43,5 @@ router
   )
 
 
+  .use('/paypal-auth', require('../../services/paypal-auth'))
 module.exports = router
