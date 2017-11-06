@@ -30,8 +30,13 @@ router
       .then(resp => resp.data)
       .then(verification => {
         if (verification === 'VERIFIED') {
+          // payment verified: update member status and send account creation mail
           console.log(`Verified IPN: Transaction ID: ${req.body.txn_id} is verified.`)
-          // Member.findOne
+          Member.findOneAndUpdate({ email: req.body.custom }, { account_active: true },
+            (err, doc) => {
+              if (err) console.error(err)
+              sendAccountMail(doc)
+            })
         }
         else if (verification === 'INVALID') {
           console.error(`Invalid IPN: Transaction ID: ${req.body.txn_id} is invalid.`)

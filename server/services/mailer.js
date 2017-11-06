@@ -12,12 +12,10 @@ const transporter = nodemailer.createTransport({
 const getDate = () => moment().format('MMMM Do YYYY')
 
 const sendContactMail = (fname, lname, senderAddr, msgSubject, msgText) => {
-
   const responseSubject = encodeURIComponent(`Response to: ${msgSubject}`)
   const responseBody = encodeURIComponent(
     `\n\n\n\nOn ${getDate()},  ${fname} sent: \n\n ${msgText}`
   )
-
   const emailFooter = `
     <br /><br /><hr />
     <a href="mailto:${senderAddr}?subject=${responseSubject}&body=${responseBody}">Reply to ${fname}</a>
@@ -39,6 +37,7 @@ const sendContactMail = (fname, lname, senderAddr, msgSubject, msgText) => {
 
 
 const sendAccountMail = (member) => {
+  console.log('SENDING ACCOUNT MAIL TO NEW MEMBER')
   console.log(member)
 }
 
