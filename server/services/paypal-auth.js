@@ -24,6 +24,8 @@ router
       }
     }
 
+    console.log(req.body)
+
     axios.post(getURI(), responseBody)
       .then(resp => resp.data)
       .then(verification => {
