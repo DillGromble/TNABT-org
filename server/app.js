@@ -16,9 +16,6 @@ app
   .use(morgan('dev'))
   .use(express.static(path.resolve(__dirname, '..', 'client/build')))
 
-  // specify the router for paypal services before the bodyparser to maintain
-  // formatting that needs to be returned to paypal
-  .use('/api/auth/paypal-auth', require('./services/paypal-auth'))
 
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
