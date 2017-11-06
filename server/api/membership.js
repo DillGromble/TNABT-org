@@ -11,6 +11,7 @@ router
   })
 
   .post('/apply', (req, res) => {
+
     Member.create(req.body, (err, member) => {
         if (err) throw err
         console.log('user created: ', member)

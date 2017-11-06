@@ -69,3 +69,5 @@ typings/
 
 # production
 /build
+
+secrets.js

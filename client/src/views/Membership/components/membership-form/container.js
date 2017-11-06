@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 
 import MemberFormComponent from './component'
 import PopupForm from '../../../../components/Popup-Form/PopupForm'
@@ -36,9 +36,9 @@ export default class MembershipForm extends Component {
   onSubmit(e) {
     e.preventDefault()
     this.setState({ formComplete: true })
-    // axios.post('/api/membership/apply', this.state)
-    //   .then(res => console.log(res.data))
-    //   .catch(err => console.error(err))
+    axios.post('/api/membership/apply', this.state)
+      .then(res => console.log(res.data))
+      .catch(err => console.error(err))
   }
 
 

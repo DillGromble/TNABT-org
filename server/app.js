@@ -1,5 +1,5 @@
 const express = require('express')
-const session = require('express-session')
+const session = require('cookie-session')
 const path = require('path')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
@@ -20,10 +20,10 @@ app
   .use(bodyParser.urlencoded({ extended: true }))
 
   .use(session({
-    secret: process.env.SECRET || 'doot is the word',
-    resave: false,
-    saveUninitialized: false
+    name: 'session',
+    secret: process.env.SECRET || 'doot is the word'
   }))
+
   .use(passport.initialize())
   .use(passport.session())
 

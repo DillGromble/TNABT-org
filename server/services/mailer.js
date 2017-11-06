@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
 
 const getDate = () => moment().format('MMMM Do YYYY')
 
-const sendMail = (fname, lname, senderAddr, msgSubject, msgText) => {
+const sendContactMail = (fname, lname, senderAddr, msgSubject, msgText) => {
 
   const responseSubject = encodeURIComponent(`Response to: ${msgSubject}`)
   const responseBody = encodeURIComponent(
@@ -37,4 +37,13 @@ const sendMail = (fname, lname, senderAddr, msgSubject, msgText) => {
   })
 }
 
-module.exports = sendMail
+
+const sendAccountMail = (member) => {
+  console.log(member)
+}
+
+
+module.exports = {
+  sendContactMail,
+  sendAccountMail
+}

@@ -34,6 +34,3 @@ const PayPalPage = ({ firstname, email }) => (
 
 
 export default PayPalPage
-
-
-
