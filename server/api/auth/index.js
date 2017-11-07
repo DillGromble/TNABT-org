@@ -11,10 +11,8 @@ router
   .post('/login', (req, res, next) => {
     passport.authenticate('local', (err, user, info) => {
       if (err) return next(err)
-      if (!user) {
-        console.log('no user:', info)
-        return res.send({ success: false, message: 'authentication failed'})
-      }
+      if (!user) return res.status(401).send({ success: false, message: info.name })
+
       req.login(user, loginErr => {
         if (loginErr) return next(loginErr)
         return res.send({success: true, message: 'authentication success'})
@@ -27,20 +25,6 @@ router
     req.logout()
     res.status(200).send(req.user)
   })
-
-
-  // .post('/register', (req, res, next) =>
-  //   Account.register(
-  //     new Account({ username: req.body.username }), req.body.password, (err, account) => {
-  //       if (err) {
-  //         console.error('Registration error: ', err)
-  //         return next(err)
-  //       }
-  //       passport.authenticate('local')(req, res, function () {
-  //         res.status(200).send(account);
-  //       })
-  //   })
-  // )
 
 
   .use('/paypal-auth', require('../../services/paypal-auth'))

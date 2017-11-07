@@ -4,13 +4,13 @@ import { Link } from 'react-router'
 
 import './login.css'
 
-const Login = ({ closeWindow, resetForm, onSubmit, handleChange, emailVal, passVal }) => (
+const Login = ({ closeWindow, resetForm, onSubmit, handleChange, emailVal, passVal, errField }) => (
   <div>
     <div className="auth-container">
       <div className="auth-inputs">
         <form className="form-auth" onSubmit={onSubmit}>
           <input
-            className="form-input"
+            className={`form-input ${errField === 'user' ? 'error-highlight' : ''}`}
             type="email"
             name="username"
             placeholder="E-mail Address"
@@ -18,7 +18,7 @@ const Login = ({ closeWindow, resetForm, onSubmit, handleChange, emailVal, passV
             value={emailVal}
           />
           <input
-            className="form-input"
+            className={`form-input ${errField === 'pass' ? 'error-highlight' : ''}`}
             type="password"
             name="password"
             placeholder="Password"
