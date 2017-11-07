@@ -37,8 +37,7 @@ const sendContactMail = (fname, lname, senderAddr, msgSubject, msgText) => {
 
 
 const sendAccountMail = (member) => {
-  console.log('SENDING ACCOUNT MAIL TO NEW MEMBER')
-  console.log(member)
+  console.log('SENDING ACCOUNT MAIL TO NEW MEMBER at: ', member.email)
 
   const mailOptions = {
     from: 'mailer.tnabt@gmail.com',

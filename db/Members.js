@@ -10,6 +10,7 @@ const memberSchema = new Schema({
   zip: Number,
   phone: Number,
   email: String,
+  username: String,
   password: String,
   school: String,
   classes: Array,

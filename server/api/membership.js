@@ -11,17 +11,19 @@ router
   })
 
   .post('/apply', (req, res) => {
-
-    Member.remove({}, (err) => {
+    Member.find({ email: req.body.email }, (err, doc) => {
       if (err) console.error(err)
-      console.log('members removed')
+      if (doc.length) {
+        return res.status(409).send('E-mail already exists!')
+      }
+      else {
+        Member.create(req.body, (error, member) => {
+          if (error) console.error(error)
+          console.log('user created: ', member)
+          res.status(200).send()
+        })
+      }
     })
-
-    Member.create(req.body, (err, member) => {
-        if (err) throw err
-        console.log('user created: ', member)
-        res.status(200).send()
-      })
   })
 
 
