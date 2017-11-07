@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const Member = require('../../db/Members')
-// const passport = require('passport')
 const generator = require('generate-password')
 const sendAccountMail = require('../services/mailer').sendAccountMail
 

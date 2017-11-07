@@ -14,25 +14,18 @@ const memberSchema = new Schema({
   password: String,
   school: String,
   classes: Array,
-  created_at: {
-    type: Date,
-    default: Date.now()
-  },
+  created_at: { type: Date, default: Date.now() },
   updated_at: Date,
-  account_active: {
-    type: Boolean,
-    default: false
-  },
-  paid_next_year: {
-    type: Boolean,
-    default: false
-  },
-  lifetime_member: Boolean
+  account_active: { type: Boolean, default: false },
+  paid_next_year: { type: Boolean, default: false },
+  lifetime_member: Boolean,
+  password_change_required: { type: Boolean, default: true }
 })
 
 
 memberSchema.plugin(passportLocalMongoose, {
   usernameField: 'email',
 })
+
 
 module.exports = mongoose.model('Member', memberSchema)

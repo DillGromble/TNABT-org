@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import PopupForm from '../Popup-Form/PopupForm'
 import LoginComponent from './component'
-
+import SignUpContainer from './Signup/container'
 
 export default class Login extends Component {
 
@@ -14,11 +14,14 @@ export default class Login extends Component {
       username: '',
       password: '',
       errField: '',
-      errMsg: ''
+      errMsg: '',
+      header: 'Login',
+      changeRequired: false
     }
     this.onSubmit = this.onSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.resetFields = this.resetFields.bind(this)
+    this.successfulLogin = this.successfulLogin.bind(this)
     this.setState = this.setState.bind(this)
   }
 
@@ -36,11 +39,11 @@ export default class Login extends Component {
     }
     axios.post('/api/auth/login', credentials)
       .then(res => {
-        if (res.status === 200) {
-          this.props.setUser()
-          this.resetFields()
-          this.props.closeWindow()
-          hashHistory.push('/home')
+        if (res.data.changeRequired) {
+          this.setState({ header: 'Password Change Required', changeRequired: true })
+        }
+        else {
+          this.successfulLogin()
         }
       })
       .catch(err => {
@@ -61,27 +64,45 @@ export default class Login extends Component {
   }
 
 
+  successfulLogin() {
+    this.props.setUser()
+    this.resetFields()
+    this.props.closeWindow()
+    hashHistory.push('/home')
+  }
+
+
   resetFields() {
     this.setState({ username: '', password: '', errMsg: '' })
   }
 
 
   render() {
-    const { onSubmit, handleChange, resetFields } = this
-    const { username, password, errMsg, errField } = this.state
-    const header = errMsg || 'Login'
+    const { onSubmit, handleChange, resetFields, successfulLogin } = this
+    const { username, password, errMsg, errField, changeRequired } = this.state
+    const header = errMsg || this.state.header
 
     return (
       <PopupForm {...this.props} resetForm={resetFields} header={header} type="auth">
-        <LoginComponent
-          closeWindow={this.props.closeWindow}
-          resetForm={resetFields}
-          onSubmit={onSubmit}
-          handleChange={handleChange}
-          emailVal={username}
-          passVal={password}
-          errField={errField}
-        />
+        {
+          changeRequired
+            ?
+              <SignUpContainer
+                username={username}
+                oldPassword={password}
+                successfulLogin={successfulLogin}
+              />
+            :
+              <LoginComponent
+                closeWindow={this.props.closeWindow}
+                resetForm={resetFields}
+                onSubmit={onSubmit}
+                handleChange={handleChange}
+                emailVal={username}
+                passVal={password}
+                errField={errField}
+              />
+        }
       </PopupForm>
     )
   }

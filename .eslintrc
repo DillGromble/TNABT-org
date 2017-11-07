@@ -1,0 +1,21 @@
+{
+  "extends": "eslint-config-fullstack",
+
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+    // "ecmaFeatures": {
+    //     "jsx": true
+    // }
+  },
+
+  "rules": {
+      "no-var": 0,                     // http://eslint.org/docs/rules/no-var
+      "prefer-arrow-callback": 1,      // http://eslint.org/docs/rules/prefer-arrow-callback
+      "prefer-const": 1,               // http://eslint.org/docs/rules/prefer-const
+      "prefer-spread": 1,              // http://eslint.org/docs/rules/prefer-spread
+      "prefer-template": 1,            // http://eslint.org/docs/rules/prefer-template
+      "camelcase": "off",
+      "no-unused-vars": "error"
+  }
+}
