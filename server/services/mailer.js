@@ -66,8 +66,28 @@ const sendAccountMail = (member, tempPass) => {
   })
 }
 
+const sendPaymentConfirmation = (member) => {
+  const responseBody =
+    `Thanks for your payment ${member.fname}!\n\n
+    You're now able to access the stuff that's only for members!\n\n
+    Your account will expire on Dec 31st of this year.
+    `
+
+  const mailOptions = {
+    from: 'mailer.tnabt@gmail.com',
+    to: member.email,
+    subject: 'Your TNABT Membership Verification',
+    text: responseBody
+  }
+
+  transporter.sendMail(mailOptions, (err, info) => {
+    if (err) return console.error(err)
+    console.log('Payment confirmation email sent: ', info.envelope, info.messageId)
+  })
+}
 
 module.exports = {
   sendContactMail,
-  sendAccountMail
+  sendAccountMail,
+  sendPaymentConfirmation
 }
