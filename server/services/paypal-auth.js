@@ -11,6 +11,7 @@ const Member = require('../../db/Members')
 
 const getURI = () => 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'
 
+
 router
   .post('/', (req, res, next) => {
     res.sendStatus(200)
@@ -23,8 +24,6 @@ router
         responseBody += `&${key}=${value}`
       }
     }
-
-    // console.log(req.body)
 
     axios.post(getURI(), responseBody)
       .then(resp => resp.data)
