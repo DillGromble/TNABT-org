@@ -71,6 +71,20 @@ section { padding: 80px; }
 }
 
 .pos-relative { position: relative; }
+
+.error-highlight {
+  animation: highlight 2s;
+}
+
+@keyframes highlight {
+  0% {
+    background: rgb(255, 0, 0)
+  }
+  100% {
+    background: none;
+  }
+}
+
 /*--------------------------------Headers-------------------------------------*/
 
 h1, h2, h3 { font-weight: 300; }

@@ -8,7 +8,6 @@ export default class InactiveMember extends Component {
 
   constructor(props) {
     super(props)
-    console.log(props)
     this.state = {
       fname: props.user.fname,
       email: props.user.email

@@ -87,7 +87,7 @@ const MemberForm = ({ onSubmit, handleChange, fname, lname, street,
 
           <div className="col span-1-of-2">
             <label
-              className={`form-label ${error ? 'member-email-error' : ''}`}
+              className={`form-label ${error ? 'error-highlight' : ''}`}
               htmlFor="email">
               {error ? errMsg : 'Email:'}
             </label>

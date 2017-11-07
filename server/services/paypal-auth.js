@@ -29,13 +29,11 @@ router
       .then(resp => resp.data)
       .then(verification => {
         if (req.body.txn_id && verification === 'VERIFIED') {
-
           // payment verified: update member status and send account creation mail
           console.log(`Verified IPN: Transaction ID: ${req.body.txn_id} is verified.`)
-
           Member.findOneAndUpdate({ email: req.body.custom }, { account_active: true },
             (err, doc) => {
-              if (err) console.error(err)
+              if (err) next(err)
               sendPaymentConfirmation(doc)
             }
           )
@@ -47,7 +45,7 @@ router
           console.error('Unexpected response body')
         }
       })
-      .catch(err => console.error(err))
+      .catch(next)
   })
 
 
