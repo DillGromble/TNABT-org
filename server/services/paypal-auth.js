@@ -1,10 +1,15 @@
 const router = require('express').Router()
 const axios = require('axios')
 const querystring = require('querystring')
+const sendAccountMail = require('./mailer').sendAccountMail
+const Member = require('../../db/Members')
 
-const getURI = () => process.env.NODE_ENV === 'dev'
-  ? 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'
-  : 'https://ipnpb.paypal.com/cgi-bin/webscr'
+
+// const getURI = () => process.env.NODE_ENV === 'dev'
+//   ? 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'
+//   : 'https://ipnpb.paypal.com/cgi-bin/webscr'
+
+const getURI = () => 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'
 
 
 router
@@ -23,8 +28,15 @@ router
     axios.post(getURI(), responseBody)
       .then(resp => resp.data)
       .then(verification => {
-        if (verification === 'VERIFIED') {
+        console.log('post verification is: ', verification)
+        if (req.body.txn_id && verification === 'VERIFIED') {
+          // payment verified: update member status and send account creation mail
           console.log(`Verified IPN: Transaction ID: ${req.body.txn_id} is verified.`)
+          Member.findOneAndUpdate({ email: req.body.custom }, { account_active: true },
+            (err, doc) => {
+              if (err) console.error(err)
+              sendAccountMail(doc)
+            })
         }
         else if (verification === 'INVALID') {
           console.error(`Invalid IPN: Transaction ID: ${req.body.txn_id} is invalid.`)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 
 import MemberFormComponent from './component'
 import PopupForm from '../../../../components/Popup-Form/PopupForm'
@@ -19,9 +19,12 @@ export default class MembershipForm extends Component {
       email: '',
       school: '',
       classes: '',
-      formComplete: false
+      formComplete: false,
+      error: false,
+      errMsg: ''
     }
     this.state = Object.assign({}, this.initialState)
+    this.setState = this.setState.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.resetFields = this.resetFields.bind(this)
@@ -35,10 +38,15 @@ export default class MembershipForm extends Component {
 
   onSubmit(e) {
     e.preventDefault()
-    this.setState({ formComplete: true })
-    // axios.post('/api/membership/apply', this.state)
-    //   .then(res => console.log(res.data))
-    //   .catch(err => console.error(err))
+    axios.post('/api/membership/apply', this.state)
+      .then(res => this.setState({ formComplete: true }))
+      .catch(err => {
+        if (err.response.status === 409) {
+          this.setState({ error: true, errMsg: err.response.data }, () => {
+            setTimeout(() => this.setState({ error: false }), 3000)
+          })
+        }
+      })
   }
 
 
@@ -49,7 +57,8 @@ export default class MembershipForm extends Component {
 
   render() {
     const { onSubmit, handleChange, resetFields } = this
-    const { fname, lname, street, city, zip, phone, email, school, classes } = this.state
+    const { fname,  lname,  street,  city,     zip,
+            phone,  email,  school,  classes,  error,  errMsg } = this.state
     return (
       <PopupForm {...this.props} resetForm={resetFields} header="Membership Form" type="form">
         {
@@ -69,6 +78,8 @@ export default class MembershipForm extends Component {
               email={email}
               school={school}
               classes={classes}
+              error={error}
+              errMsg={errMsg}
             />
         }
       </PopupForm>
