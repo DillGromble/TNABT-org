@@ -1,5 +1,7 @@
 const nodemailer = require('nodemailer')
 const moment = require('moment')
+const generator = require('generate-password')
+
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -43,7 +45,7 @@ const sendAccountMail = (member) => {
     from: 'mailer.tnabt@gmail.com',
     to: member.email,
     subject: 'Your TNABT Membership Verification',
-    text: 'Thank you for registering as a member of the TNABT!'
+    text: member
   }
 
   transporter.sendMail(mailOptions, (err, info) => {
