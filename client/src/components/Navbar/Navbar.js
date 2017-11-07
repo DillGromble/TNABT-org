@@ -64,7 +64,7 @@ class Navbar extends Component {
           </li>
 
           {
-            this.props.user.username
+            this.props.user.email
               ?
                 <li>
                   <a onClick={ this.props.logoutUser }>Logout</a>

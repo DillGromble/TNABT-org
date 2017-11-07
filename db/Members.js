@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const passportLocalMongoose = require('passport-local-mongoose')
 
+
 const memberSchema = new Schema({
   fname: String,
   lname: String,
@@ -10,7 +11,6 @@ const memberSchema = new Schema({
   zip: Number,
   phone: Number,
   email: String,
-  username: String,
   password: String,
   school: String,
   classes: Array,
@@ -27,10 +27,12 @@ const memberSchema = new Schema({
     type: Boolean,
     default: false
   },
-  lifetime_members: Boolean
+  lifetime_member: Boolean
 })
 
 
-memberSchema.plugin(passportLocalMongoose)
+memberSchema.plugin(passportLocalMongoose, {
+  usernameField: 'email',
+})
 
 module.exports = mongoose.model('Member', memberSchema)

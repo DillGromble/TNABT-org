@@ -36,12 +36,12 @@ router
 
           // generate random password and update member as active with said password
           const password = generator.generate({ length: 10, numbers: true })
-          Member.findOneAndUpdate(
-            { email: req.body.custom },
-            { account_active: true, password }, (err, doc) => {
+          Member.findOneAndUpdate({ email: req.body.custom }, { account_active: true, password },
+            (err, doc) => {
               if (err) console.error(err)
               sendAccountMail(doc)
-          })
+            }
+          )
         }
         else if (verification === 'INVALID') {
           console.error(`Invalid IPN: Transaction ID: ${req.body.txn_id} is invalid.`)
