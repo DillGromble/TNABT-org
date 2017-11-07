@@ -2,9 +2,9 @@ import React from 'react'
 
 import './paypal.css'
 
-const PayPalPage = ({ firstname, email }) => (
+const PayPalPage = ({ message, email }) => (
   <div>
-    <h1 className="paypal-header">{firstname}, we are happy to have you!</h1>
+    <h1 className="paypal-header">{message}</h1>
     <h3 className="paypal-subheader copy">Choose a payment option below:</h3>
 
 
