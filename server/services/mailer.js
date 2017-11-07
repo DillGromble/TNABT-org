@@ -45,7 +45,7 @@ const sendAccountMail = (member) => {
     from: 'mailer.tnabt@gmail.com',
     to: member.email,
     subject: 'Your TNABT Membership Verification',
-    text: member
+    text: JSON.stringify(member)
   }
 
   transporter.sendMail(mailOptions, (err, info) => {
