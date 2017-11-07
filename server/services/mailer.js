@@ -22,7 +22,7 @@ const sendContactMail = (fname, lname, senderAddr, msgSubject, msgText) => {
     <a href="mailto:${senderAddr}?subject=${responseSubject}&body=${responseBody}">Reply to ${fname}</a>
   `
 
-  let mailOptions = {
+  const mailOptions = {
     from: `${fname} ${lname} <${senderAddr}>`,
     to: 'mailer.tnabt@gmail.com',
     subject: `${fname} ${lname}:  ${msgSubject}`,

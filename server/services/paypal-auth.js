@@ -18,7 +18,7 @@ router
 
     let responseBody = 'cmd=_notify-validate'
 
-    for (let key in req.body) {
+    for (const key in req.body) {
       if (req.body.hasOwnProperty(key)) {
         const value = querystring.escape(req.body[key])
         responseBody += `&${key}=${value}`
@@ -31,7 +31,9 @@ router
         if (req.body.txn_id && verification === 'VERIFIED') {
           // payment verified: update member status and send account creation mail
           console.log(`Verified IPN: Transaction ID: ${req.body.txn_id} is verified.`)
-          Member.findOneAndUpdate({ email: req.body.custom }, { account_active: true },
+          Member.findOneAndUpdate(
+            { email: req.body.custom },
+            { account_active: true, updated_at: Date.now() },
             (err, doc) => {
               if (err) next(err)
               sendPaymentConfirmation(doc)

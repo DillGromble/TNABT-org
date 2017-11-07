@@ -9,15 +9,15 @@ export default class InactiveMember extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      fname: props.user.fname,
-      email: props.user.email
+      fname: '',
+      email: ''
     }
   }
 
   componentWillReceiveProps() {
     this.setState({
-      fname: this.props.user.fname,
-      email: this.props.user.email
+      fname: this.props.user.fname || '',
+      email: this.props.user.email || ''
     })
   }
 
