@@ -3,6 +3,7 @@ const axios = require('axios')
 const querystring = require('querystring')
 const sendAccountMail = require('./mailer').sendAccountMail
 const Member = require('../../db/Members')
+const generator = require('generate-password')
 
 
 // const getURI = () => process.env.NODE_ENV === 'dev'
@@ -28,15 +29,19 @@ router
     axios.post(getURI(), responseBody)
       .then(resp => resp.data)
       .then(verification => {
-        console.log('post verification is: ', verification)
         if (req.body.txn_id && verification === 'VERIFIED') {
+
           // payment verified: update member status and send account creation mail
           console.log(`Verified IPN: Transaction ID: ${req.body.txn_id} is verified.`)
-          Member.findOneAndUpdate({ email: req.body.custom }, { account_active: true },
+
+          // generate random password and update member as active with said password
+          const password = generator.generate({ length: 10, numbers: true })
+          Member.findOneAndUpdate({ email: req.body.custom }, { account_active: true, password },
             (err, doc) => {
               if (err) console.error(err)
               sendAccountMail(doc)
-            })
+            }
+          )
         }
         else if (verification === 'INVALID') {
           console.error(`Invalid IPN: Transaction ID: ${req.body.txn_id} is invalid.`)

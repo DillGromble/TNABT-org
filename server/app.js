@@ -7,7 +7,7 @@ const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 
 
-const Account = require('../db/account')
+const Member = require('../db/Members')
 
 const app = express()
 
@@ -38,8 +38,8 @@ app
     res.status(err.status || 500).send(err.message || 'Internal server error.')
   })
 
-passport.use(new LocalStrategy(Account.authenticate()))
-passport.serializeUser(Account.serializeUser())
-passport.deserializeUser(Account.deserializeUser())
+passport.use(new LocalStrategy(Member.authenticate()))
+passport.serializeUser(Member.serializeUser())
+passport.deserializeUser(Member.deserializeUser())
 
 module.exports = app

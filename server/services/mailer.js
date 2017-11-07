@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer')
 const moment = require('moment')
 
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -36,14 +37,27 @@ const sendContactMail = (fname, lname, senderAddr, msgSubject, msgText) => {
 }
 
 
-const sendAccountMail = (member) => {
+const sendAccountMail = (member, tempPass) => {
   console.log('SENDING ACCOUNT MAIL TO NEW MEMBER at: ', member.email)
 
+  const responseBody =
+    `Welcome ${member.fname}!\n\n
+    Your TNABT account has been created with the following credentials:\n\n
+    E-mail: ${member.email}
+    Temporary Password: ${tempPass}\n\n
+    Until payment verification is received from PayPal for your membership,
+    you will be unable to view member content.  You'll receive an e-mail as
+    soon as we get verification from PayPal, letting you know that you're a
+    bonafide member and can log in.\n\n
+    Upon your first login you'll be prompted to update your temporary password
+    to one of your choosing.\n\n
+    Thank you for joining us!
+    `
   const mailOptions = {
     from: 'mailer.tnabt@gmail.com',
     to: member.email,
     subject: 'Your TNABT Membership Verification',
-    text: 'Thank you for registering as a member of the TNABT!'
+    text: responseBody
   }
 
   transporter.sendMail(mailOptions, (err, info) => {

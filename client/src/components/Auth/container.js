@@ -6,7 +6,7 @@ import PopupForm from '../Popup-Form/PopupForm'
 import LoginComponent from './Login'
 
 
-export default class ContactForm extends Component {
+export default class Login extends Component {
 
   constructor(props) {
     super(props)
@@ -30,6 +30,7 @@ export default class ContactForm extends Component {
         if (res.status === 200) {
           this.props.setUser()
           this.resetFields()
+          this.props.closeWindow()
           hashHistory.push('/home')
         }
       })
