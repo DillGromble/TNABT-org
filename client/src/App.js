@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import ContactUs from './components/Contact-Us/container'
 import Login from './components/Auth/container'
+import InactiveMember from './components/InactiveMember/container'
 
 import './index.css'
 import './grid.css'
@@ -18,7 +19,8 @@ class App extends Component {
       contactShown: false,
       authShown: false,
       bgDisabled: false,
-      user: {}
+      user: {},
+      inactiveMemberShown: false
     })
     this.toggleAuth = this.toggleAuth.bind(this)
     this.toggleContact = this.toggleContact.bind(this)
@@ -43,14 +45,26 @@ class App extends Component {
 
   setUser() {
     axios.get('/api/auth/me')
-      .then(res => this.setState({ user: res.data || {} }))
+      .then(res => this.setState({ user: res.data || {} }, () => {
+        if (this.state.user.account_active === false) {
+          this.setState({
+            inactiveMemberShown: !this.state.inactiveMemberShown,
+            bgDisabled: !this.state.bgDisabled
+          })
+        }
+      }))
       .catch(err => console.error(err))
   }
 
 
   logoutUser() {
     axios.post('/api/auth/logout')
-      .then(res => this.setState({ user: res.data }, () => console.log('logged out: ', this.state.user)))
+      .then(res => this.setState({
+          user: res.data,
+          inactiveMemberShown: false,
+          bgDisabled: false
+        }, () => console.log('logged out: ', this.state.user))
+      )
       .catch(err => console.error(err))
   }
 
@@ -75,12 +89,19 @@ class App extends Component {
     const { toggleAuth, setUser, toggleContact, logoutUser } = this
     const authShow = this.state.authShown ? 'popup-show' : ''
     const popupShow = this.state.contactShown ? 'popup-show' : ''
+    const inactiveMemberShow = this.state.inactiveMemberShown ? 'popup-show' : ''
 
     return (
       <div className="App">
         <Navbar toggleAuth={toggleAuth} user={this.state.user} logoutUser={logoutUser}/>
         <Login isVisible={authShow} closeWindow={toggleAuth} setUser={setUser}/>
         <ContactUs isVisible={popupShow} closeWindow={toggleContact} />
+        <InactiveMember
+          isVisible={inactiveMemberShow}
+          closeWindow={logoutUser}
+          user={this.state.user}
+        />
+
         {
           React.cloneElement(
             this.props.children,

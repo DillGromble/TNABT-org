@@ -64,7 +64,7 @@ export default class MembershipForm extends Component {
         {
           this.state.formComplete
           ?
-            <PayPalPage firstname={fname} email={email}/>
+            <PayPalPage message={`${fname}, we are happy to have you!`} email={email}/>
           :
             <MemberFormComponent
               onSubmit={onSubmit}
