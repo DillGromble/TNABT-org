@@ -98,17 +98,17 @@ if (secret) {
 /*--------------------------------------------------------------------------*/
 router
 
-  .get('/', passport.authenticate('facebook', { scope: 'email' }))
+  .get('/', passport.authenticate('facebookAuthStrategy', { scope: 'email' }))
 
-  .get('/callback', passport.authenticate('facebook', {
+  .get('/callback', passport.authenticate('facebookAuthStrategy', {
       successRedirect: '/',
       failureRedirect: '/auth-failure'
   }))
 
 
-  .get('/connect', passport.authorize('facebook', { scope: 'email' }))
+  .get('/connect', passport.authorize('facebookConnectStrategy', { scope: 'email' }))
 
-  .get('/connect/callback', passport.authorize('facebook', {
+  .get('/connect/callback', passport.authorize('facebookConnectStrategy', {
     successRedirect: '/resources',
     failureRedirect: '/'
   }))
