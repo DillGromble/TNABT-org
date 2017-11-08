@@ -22,6 +22,7 @@ export default class Login extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.resetFields = this.resetFields.bind(this)
     this.successfulLogin = this.successfulLogin.bind(this)
+    this.facebookLogin = this.facebookLogin.bind(this)
     this.setState = this.setState.bind(this)
   }
 
@@ -77,8 +78,15 @@ export default class Login extends Component {
   }
 
 
+  facebookLogin() {
+    axios.get('/api/auth/facebook')
+      .then(res => console.log(res.data))
+      .catch(err => console.error(err))
+  }
+
+
   render() {
-    const { onSubmit, handleChange, resetFields, successfulLogin } = this
+    const { onSubmit, handleChange, resetFields, successfulLogin, facebookLogin } = this
     const { username, password, errMsg, errField, changeRequired } = this.state
     const header = errMsg || this.state.header
 
@@ -101,6 +109,7 @@ export default class Login extends Component {
                 emailVal={username}
                 passVal={password}
                 errField={errField}
+                facebookLogin={facebookLogin}
               />
         }
       </PopupForm>

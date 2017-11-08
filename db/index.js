@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/test', { useMongoClient: true })
 
 const db = mongoose.connection
 

@@ -1,12 +1,34 @@
 const nodemailer = require('nodemailer')
 const moment = require('moment')
+let secret
 
 
+// set secrets by trying dev file first, then defaulting to process.env
+try {
+  secret = require('../../secrets')
+  console.log('Mailer info loaded from: secrets file')
+}
+catch (err) {
+  console.log('Secrets not found... trying process.env')
+  if (process.env.MAILER_ADDRESS && process.env.MAILER_PASS) {
+    secret = {
+      MAILER_ADDRESS: process.env.MAILER_ADDRESS,
+      MAILER_PASS: process.env.MAILER_PASS
+    }
+    console.log('Mailer info loaded from : process.env')
+  }
+  else {
+    console.error('Unable to find keys... Mailer will not function!')
+  }
+}
+
+
+// create re-usable transporter object
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'mailer.tnabt@gmail.com',
-    pass: process.env.MAILER_PASS
+    user: secret.MAILER_ADDRESS,
+    pass: secret.MAILER_PASS
   }
 })
 
@@ -24,11 +46,13 @@ const sendContactMail = (fname, lname, senderAddr, msgSubject, msgText) => {
 
   const mailOptions = {
     from: `${fname} ${lname} <${senderAddr}>`,
-    to: 'mailer.tnabt@gmail.com',
+    to: secret.MAILER_ADDRESS,
     subject: `${fname} ${lname}:  ${msgSubject}`,
     text: msgText,
     html: msgText + emailFooter
   }
+
+  console.log('SECRETS ARE: ', secret.MAILER_ADDRESS, secret.MAILER_PASS)
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) return console.log(error)
@@ -54,7 +78,7 @@ const sendAccountMail = (member, tempPass) => {
     Thank you for joining us!
     `
   const mailOptions = {
-    from: 'mailer.tnabt@gmail.com',
+    from: secret.MAILER_ADDRESS,
     to: member.email,
     subject: 'Your TNABT Membership Verification',
     text: responseBody
@@ -74,7 +98,7 @@ const sendPaymentConfirmation = (member) => {
     `
 
   const mailOptions = {
-    from: 'mailer.tnabt@gmail.com',
+    from: secret.MAILER_ADDRESS,
     to: member.email,
     subject: 'Your TNABT Membership Verification',
     text: responseBody

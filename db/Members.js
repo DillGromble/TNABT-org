@@ -12,6 +12,12 @@ const memberSchema = new Schema({
   phone: Number,
   email: String,
   password: String,
+  facebook: {
+    id: String,
+    token: String,
+    email: String,
+    name: String
+  },
   school: String,
   classes: Array,
   created_at: { type: Date, default: Date.now() },

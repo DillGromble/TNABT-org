@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 import './currentOBT.css'
 
 import winnerOBTA from '../../img/Elizabeth-Forrester.jpg'
@@ -7,7 +8,7 @@ import winnerOBTA from '../../img/Elizabeth-Forrester.jpg'
 const CurrentOBT = () => (
   <section className="section-current-OBT">
     <div className="row">
-      <h2>This Years OBTA Winner</h2>
+      <h2>This Year's OBTA Winner</h2>
       <img className="current-OBT-pic" src={winnerOBTA} alt="Current OBTA Winner" />
       <h3 className="current-OBT-name">Elizabeth Forrester</h3>
       <h4 className="current-OBT-school">Baylor School, Chattanooga, TN</h4>

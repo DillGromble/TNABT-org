@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 
 import './login.css'
 
-const Login = ({ closeWindow, resetForm, onSubmit, handleChange, emailVal, passVal, errField }) => (
+const Login = ({ closeWindow, resetForm, onSubmit, handleChange, emailVal, passVal, errField, facebookLogin }) => (
   <div>
     <div className="auth-container">
       <div className="auth-inputs">
@@ -34,8 +34,8 @@ const Login = ({ closeWindow, resetForm, onSubmit, handleChange, emailVal, passV
       </div>
 
       <div className="auth-inputs oauth-btns">
-        <button className="btn btn-ghost" type="submit">Submit</button>
-        <button className="btn btn-ghost" type="submit">Submit</button>
+        <button className="btn btn-ghost" type="button" onClick={facebookLogin}>Facebook</button>
+        <button className="btn btn-ghost" type="button">Google</button>
       </div>
     </div>
 
