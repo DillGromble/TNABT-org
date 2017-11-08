@@ -68,7 +68,7 @@ if (secret) {
   passport.use('facebookConnectStrategy', new FacebookStrategy({
       clientID: secret.FACEBOOK_APP_ID,
       clientSecret: secret.FACEBOOK_SECRET,
-      callbackURL: secret.FACEBOOK_CALLBACK_AUTH,
+      callbackURL: secret.FACEBOOK_CALLBACK_CONNECT,
       passReqToCallback: true
     },
     (req, token, refreshToken, profile, done) => {
