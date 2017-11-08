@@ -95,7 +95,7 @@ router
   .get('/', passport.authenticate('facebookAuthStrategy', { scope: 'email' }))
 
   .get('/callback', passport.authenticate('facebookAuthStrategy', {
-      successRedirect: '/home',
+      successRedirect: 'https://tnabt-org.herokuapp.com/',
       failureRedirect: '/auth-failure'
   }))
 
@@ -104,9 +104,7 @@ router
 
   .get('/connect/callback', passport.authorize('facebookConnectStrategy',
     { failureRedirect: '/auth-failure' }), (req, res) => {
-      console.log('connect req.user: ', req.user)
-      console.log('connect req.account?: ', req.account)
-      res.redirect('/home')
+      res.redirect('https://tnabt-org.herokuapp.com/')
     }
   )
 
