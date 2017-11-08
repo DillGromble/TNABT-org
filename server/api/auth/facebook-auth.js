@@ -38,14 +38,12 @@ if (secret) {
   /*--------------------------------------------------------------------------*/
   // Strategy for auth via Facebook
   /*--------------------------------------------------------------------------*/
-  const facebookConfigAUTH = {
-    clientID: secret.FACEBOOK_APP_ID,
-    clientSecret: secret.FACEBOOK_SECRET,
-    callbackURL: secret.FACEBOOK_CALLBACK_AUTH,
-    passReqToCallback: true
-  }
-
-  const facebookAuthStrategy = new FacebookStrategy(facebookConfigAUTH,
+  passport.use('facebookAuthStrategy', new FacebookStrategy({
+      clientID: secret.FACEBOOK_APP_ID,
+      clientSecret: secret.FACEBOOK_SECRET,
+      callbackURL: secret.FACEBOOK_CALLBACK_AUTH,
+      passReqToCallback: true
+    },
     (req, token, refreshToken, profile, done) => {
       process.nextTick(() => {
         // if user isn't logged in, look them up by facebook id
@@ -61,19 +59,18 @@ if (secret) {
         }
       })
     }
-  )
+  ))
+
 
   /*--------------------------------------------------------------------------*/
   // Strategy for linking Facebook account to local auth
   /*--------------------------------------------------------------------------*/
-  const facebookConfigCONNECT = {
-    clientID: secret.FACEBOOK_APP_ID,
-    clientSecret: secret.FACEBOOK_SECRET,
-    callbackURL: secret.FACEBOOK_CALLBACK_AUTH,
-    passReqToCallback: true
-  }
-
-  const facebookConnectStrategy = new FacebookStrategy(facebookConfigCONNECT,
+  passport.use('facebookConnectStrategy', new FacebookStrategy({
+      clientID: secret.FACEBOOK_APP_ID,
+      clientSecret: secret.FACEBOOK_SECRET,
+      callbackURL: secret.FACEBOOK_CALLBACK_AUTH,
+      passReqToCallback: true
+    },
     (req, token, refreshToken, profile, done) => {
       process.nextTick(() => {
         const user = req.user
@@ -86,10 +83,7 @@ if (secret) {
         })
       })
     }
-  )
-
-  passport.use(facebookAuthStrategy)
-  passport.use(facebookConnectStrategy)
+  ))
 }
 
 
