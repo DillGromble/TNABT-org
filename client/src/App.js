@@ -60,10 +60,10 @@ class App extends Component {
   logoutUser() {
     axios.post('/api/auth/logout')
       .then(res => this.setState({
-          user: res.data,
+          user: {},
           inactiveMemberShown: false,
           bgDisabled: false
-        }, () => console.log('logged out: ', this.state.user))
+        })
       )
       .catch(err => console.error(err))
   }
@@ -94,7 +94,12 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar toggleAuth={toggleAuth} user={this.state.user} logoutUser={logoutUser}/>
-        <Login isVisible={authShow} closeWindow={toggleAuth} setUser={setUser}/>
+        <Login
+          isVisible={authShow}
+          closeWindow={toggleAuth}
+          setUser={setUser}
+          logoutUser={logoutUser}
+        />
         <ContactUs isVisible={popupShow} closeWindow={toggleContact} />
         <InactiveMember
           isVisible={inactiveMemberShow}

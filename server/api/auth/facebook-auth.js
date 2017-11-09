@@ -90,8 +90,8 @@ if (secret) {
 /*--------------------------------------------------------------------------*/
 // Routes
 /*--------------------------------------------------------------------------*/
-router
 
+router
   .get('/', passport.authenticate('facebookAuthStrategy', { scope: 'email' }))
 
   .get('/callback', passport.authenticate('facebookAuthStrategy', {
@@ -102,27 +102,11 @@ router
 
   .get('/connect', passport.authorize('facebookConnectStrategy', { scope: 'email' }))
 
-  .get('/connect/callback', passport.authorize('facebookConnectStrategy',
-    { failureRedirect: '/auth-failure' }), (req, res) => {
-      res.redirect('https://tnabt-org.herokuapp.com/')
-    }
-  )
+  .get('/connect/callback', passport.authorize('facebookConnectStrategy', {
+      successRedirect: 'https://tnabt-org.herokuapp.com/',
+      failureRedirect: '/auth-failure'
+  }))
 
 
 module.exports = router
 
-
-  // .get('/', (req, res, next) => {
-  //   passport.authenticate('facebook', { scope: 'email' }, (err, user, info) => {
-  //     if (err) return next(err)
-  //     if (!user) return res.status(401).send({ success: false, message: info.name })
-  //     req.login(user, loginErr => {
-  //       if (loginErr) return next(loginErr)
-  //       return res.send({
-  //         success: true,
-  //         message: 'authentication success',
-  //         changeRequired: user.password_change_required
-  //       })
-  //     })
-  //   })(req, res, next)
-  // })

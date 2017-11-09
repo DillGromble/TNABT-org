@@ -161,7 +161,18 @@ a { text-decoration: none; }
   cursor: pointer;
 }
 
+.btn-ghost:disabled {
+  color: grey;
+  transition: none;
+  border-color: darkgrey;
+}
 
+.btn-ghost:disabled:hover {
+  color: grey;
+  transition: none;
+  background-color: #EDEDED;
+  cursor: default;
+}
 
 
 /*--------------------------------Queries-------------------------------------*/

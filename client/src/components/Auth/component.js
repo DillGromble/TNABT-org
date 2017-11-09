@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 
 import './login.css'
 
-const Login = ({ closeWindow, resetForm, onSubmit, handleChange, emailVal, passVal, errField, facebookLogin }) => (
+const Login = ({ closeResetLogout, onSubmit, handleChange, emailVal, passVal, errField, facebookLogin }) => (
   <div>
     <div className="auth-container">
       <div className="auth-inputs">
@@ -34,14 +34,18 @@ const Login = ({ closeWindow, resetForm, onSubmit, handleChange, emailVal, passV
       </div>
 
       <div className="auth-inputs oauth-btns">
-        <button className="btn btn-ghost" type="button" onClick={facebookLogin}>Facebook</button>
-        <button className="btn btn-ghost" type="button">Google</button>
+        <a className="social-link facebook-auth" href="/api/auth/facebook">
+          <i className="ion-social-facebook" />
+          <hr />
+          Login with Facebook
+        </a>
+        <button className="btn btn-ghost" type="button" disabled><i className="ion-social-googleplus" />Google coming soon!</button>
       </div>
     </div>
 
     <p className="auth-footer">
       Not a member? Check out our &nbsp;
-      <Link to="/membership" onClick={() => { closeWindow(); resetForm(); }}>Membership</Link>
+      <Link to="/membership" onClick={closeResetLogout}>Membership</Link>
       &nbsp; page!
     </p>
   </div>

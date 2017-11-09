@@ -31,7 +31,11 @@ const SignUp = ({ onSubmit, handleChange, passVal, rePassVal, error }) => (
       </div>
 
       <div className="auth-inputs oauth-btns">
-        <button className="btn btn-ghost" type="submit">Submit</button>
+        <a className="social-link facebook-auth" href="/api/auth/facebook/connect">
+          <i className="ion-social-facebook" />
+          <hr />
+          Link to Facebook
+        </a>
         <button className="btn btn-ghost" type="submit">Submit</button>
       </div>
     </div>
