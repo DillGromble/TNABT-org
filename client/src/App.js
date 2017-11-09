@@ -110,7 +110,11 @@ class App extends Component {
         {
           React.cloneElement(
             this.props.children,
-            { toggleContact: toggleContact, toggleAuth: toggleAuth }
+            {
+              toggleContact: toggleContact,
+              toggleAuth: toggleAuth,
+              user: this.state.user
+            }
           )
         }
         <Footer toggleContact={toggleContact} />
