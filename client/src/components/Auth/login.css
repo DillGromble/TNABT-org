@@ -45,7 +45,7 @@
 
   padding: 0px 20px;
 
-  color: #C3C3C3;
+  color: #f9f9f9;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,7 +59,7 @@
 .social-link > hr {
   width: 3px;
   height: 47px;
-  background-color: #C3C3C3;
+  background-color: #f9f9f9;
 }
 
 .social-link.facebook-auth {
