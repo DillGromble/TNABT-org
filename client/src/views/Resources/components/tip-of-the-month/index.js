@@ -12,8 +12,8 @@ const TipOfMonth = ({ toggleAuth, toggleContact, user }) => (
   <section className="section-tip-overview">
     <h2>Tip of the Month</h2>
     <p className="copy tip-copy">
-      The Tip of the Month is the place to show off you great interactive, dry
-      lab, etc, that has been effective in your life science classes.
+    The Tip of the Month is our showcase for your great interactive activities,
+     dry labs, etc, that have been effective in your life science classes.
     </p>
 
     <TipOverview />
