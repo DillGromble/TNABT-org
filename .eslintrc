@@ -1,5 +1,5 @@
 {
-  "extends": "eslint-config-fullstack",
+  "extends": "fullstack",
 
   "parserOptions": {
     "ecmaVersion": 6,

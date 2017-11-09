@@ -35,3 +35,37 @@
   font-size: 0.9em;
   margin-top: 10px;
 }
+
+.social-link {
+  border-radius: 10px;
+
+  font-family: inherit;
+  font-size: 0.9em;
+  font-weight: 400;
+
+  padding: 0px 20px;
+
+  color: #C3C3C3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-link > i {
+  font-size: 1.3em;
+  padding-left: 4px;
+}
+
+.social-link > hr {
+  width: 3px;
+  height: 47px;
+  background-color: #C3C3C3;
+}
+
+.social-link.facebook-auth {
+  background-color: #3b5998;
+}
+
+.social-link.facebook-auth:hover {
+  transform: scale(1.01);
+}

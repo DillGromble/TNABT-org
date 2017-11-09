@@ -13,7 +13,6 @@ router
 
       req.login(user, loginErr => {
         if (loginErr) return next(loginErr)
-        console.log('user in req.login', user)
         return res.send({
           success: true,
           message: 'authentication success',
@@ -44,7 +43,7 @@ router
     })
   })
 
-
+  .use('/facebook', require('./facebook-auth'))
   .use('/paypal-auth', require('../../services/paypal-auth'))
 
 

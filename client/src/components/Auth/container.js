@@ -20,8 +20,8 @@ export default class Login extends Component {
     }
     this.onSubmit = this.onSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.resetFields = this.resetFields.bind(this)
     this.successfulLogin = this.successfulLogin.bind(this)
+    this.closeResetLogout = this.closeResetLogout.bind(this)
     this.setState = this.setState.bind(this)
   }
 
@@ -72,18 +72,31 @@ export default class Login extends Component {
   }
 
 
-  resetFields() {
-    this.setState({ username: '', password: '', errMsg: '' })
+  closeResetLogout() {
+    this.setState({
+      username: '',
+      password: '',
+      errMsg: '',
+      changeRequired: false,
+      header: 'Login'
+    })
+    this.props.closeWindow()
+    this.props.logoutUser()
   }
 
 
   render() {
-    const { onSubmit, handleChange, resetFields, successfulLogin } = this
+    const { onSubmit, handleChange, successfulLogin, facebookLogin, closeResetLogout } = this
     const { username, password, errMsg, errField, changeRequired } = this.state
     const header = errMsg || this.state.header
 
     return (
-      <PopupForm {...this.props} resetForm={resetFields} header={header} type="auth">
+      <PopupForm
+        {...this.props}
+        closeWindow={closeResetLogout}
+        header={header}
+        type="auth"
+      >
         {
           changeRequired
             ?
@@ -94,13 +107,13 @@ export default class Login extends Component {
               />
             :
               <LoginComponent
-                closeWindow={this.props.closeWindow}
-                resetForm={resetFields}
+                closeResetLogout={closeResetLogout}
                 onSubmit={onSubmit}
                 handleChange={handleChange}
                 emailVal={username}
                 passVal={password}
                 errField={errField}
+                facebookLogin={facebookLogin}
               />
         }
       </PopupForm>
