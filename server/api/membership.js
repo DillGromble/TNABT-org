@@ -22,8 +22,8 @@ router
 
         Member.register(req.body, tempPassword, (error, account) => {
           if (error) {
-            console.error('Registration error: ', err)
-            return next(err)
+            console.error('Registration error: ', error)
+            return next(error)
           }
           sendAccountMail(account, tempPassword)
           res.status(200).send(account)
