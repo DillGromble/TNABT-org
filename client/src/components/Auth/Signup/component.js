@@ -36,7 +36,11 @@ const SignUp = ({ onSubmit, handleChange, passVal, rePassVal, error }) => (
           <hr />
           Link to Facebook
         </a>
-        <button className="btn btn-ghost" type="submit">Submit</button>
+        <button className="social-link" type="button" disabled>
+          <i className="ion-social-googleplus" />
+          <hr />
+          Google coming soon!
+        </button>
       </div>
     </div>
 

@@ -49,15 +49,7 @@ section { padding: 80px; }
   transition: opacity 0.3s;
 }
 
-.popup-exit-icon {
-  cursor: pointer;
-  font-size: 1.1em;
-  color: #f4f4f4;
-  position: absolute;
-  top: 27px;
-  right: 35px;
-  z-index: 999;
-}
+
 
 .disable-bg {
   position: fixed;

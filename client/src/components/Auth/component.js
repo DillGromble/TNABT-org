@@ -39,7 +39,11 @@ const Login = ({ closeResetLogout, onSubmit, handleChange, emailVal, passVal, er
           <hr />
           Login with Facebook
         </a>
-        <button className="btn btn-ghost" type="button" disabled><i className="ion-social-googleplus" />Google coming soon!</button>
+        <button className="social-link" type="button" disabled>
+          <i className="ion-social-googleplus" />
+          <hr />
+          Google coming soon!
+        </button>
       </div>
     </div>
 

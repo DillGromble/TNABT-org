@@ -18,7 +18,7 @@
 
 .form-header {
   width: 100%;
-  height: 80px;
+  height: 75px;
   background-color: #11A10F;
 }
 
@@ -99,7 +99,15 @@
   display: block;
 }
 
-
+.popup-exit-icon {
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #f4f4f4;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 999;
+}
 
 /*--------------------------------Queries-------------------------------------*/
 @media only screen and (max-width: 1023px) {
@@ -121,7 +129,6 @@
     margin-left: -300px;
     margin-top: -300px;
    }
-
   .form-header h3 { font-size: 1.6em; }
   .form-textarea { height: 100px; }
   .form-submit { margin: 33px auto; }
@@ -133,7 +140,7 @@
     width: 450px;
     margin-left: -225px;
    }
-   .popup-exit-icon { top: 30px; }
+
    .form-textarea { height: 100px; }
    .form-submit { margin: 33px auto; }
 }
@@ -141,9 +148,9 @@
 
 @media only screen and (max-width: 450px) {
   .form-popup {
-    width: 100vw;
+    width: 96vw;
     left: 0;
-    margin-left: 0;
+    margin-left: 2vw;
    }
 
    .form-tall { margin: 15px; }
@@ -152,8 +159,8 @@
 
 @media only screen and (max-width: 320px) {
   .form-popup {
-    width: 100vw;
+    width: 96vw;
     left: 0;
-    margin-left: 0;
+    margin-left: 2vw;
    }
 }
