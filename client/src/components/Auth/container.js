@@ -40,7 +40,10 @@ export default class Login extends Component {
     axios.post('/api/auth/login', credentials)
       .then(res => {
         if (res.data.changeRequired) {
-          this.setState({ header: 'Password Change Required', changeRequired: true })
+          this.setState({
+            header: 'Password Change Required',
+            changeRequired: true
+          }, () => { this.successfulLogin() })
         }
         else {
           this.successfulLogin()
