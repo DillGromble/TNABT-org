@@ -101,6 +101,7 @@ export default class Login extends Component {
         {...this.props}
         closeWindow={closeResetLogout}
         header={header}
+        pwChange={changeRequired}
         type="auth"
       >
         {
