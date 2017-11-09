@@ -22,6 +22,7 @@ export default class Login extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.successfulLogin = this.successfulLogin.bind(this)
     this.closeResetLogout = this.closeResetLogout.bind(this)
+    this.resetFields = this.resetFields.bind(this)
     this.setState = this.setState.bind(this)
   }
 
@@ -65,10 +66,15 @@ export default class Login extends Component {
 
 
   successfulLogin() {
-    this.props.closeWindow()
-    this.resetFields()
     this.props.setUser()
+    this.resetFields()
+    this.props.closeWindow()
     hashHistory.push('/home')
+  }
+
+
+  resetFields() {
+    this.setState({ username: '', password: '' })
   }
 
 
