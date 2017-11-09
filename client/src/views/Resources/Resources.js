@@ -9,10 +9,10 @@ import ResourceLinks from './components/links'
 import LandsEndLogo from './img/lands_end_logo.png'
 import headerBg from '../../img/resources.jpg'
 
-const Resources = () => (
+const Resources = ({ toggleAuth, toggleContact, user }) => (
   <div>
     <Header bgImg={headerBg}>Resources</Header>
-    <TipOfMonth />
+    <TipOfMonth toggleAuth={toggleAuth} toggleContact={toggleContact} user={user}/>
     <ResourceLinks />
 
     <section className="section-resource-gear">
