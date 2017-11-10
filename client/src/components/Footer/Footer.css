@@ -53,18 +53,22 @@ footer {
   color: #999999;
 }
 
-.footer-icons i:hover {
+.icon-single { color: #999999; }
+
+.icon-single:hover {
   color: #C3C3C3;
   transition: color 0.2s;
   cursor: pointer;
 }
 
-.footer-icons i:after {
+.icon-single:after {
   font-size: 0.5em;
   position: absolute;
   z-index: 1;
   padding-top: 2px;
 }
+
+.footer-icons > a { text-decoration: none; }
 
 .contact-us::after {
   content: 'Contact Us';
