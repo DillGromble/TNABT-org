@@ -8,14 +8,14 @@ const Footer = ({ toggleContact }) => (
     <div className="footer">
 
       <div className="footer-links footer-content">
-        <a href="top">Back to Top</a>
-        <a href="top">About Us</a>
-        <a href="top">Pay Dues</a>
+        <a href="#top">Back to Top</a>
+        <a href="/#/about">About Us</a>
+        <a href="/#/membership">Pay Dues</a>
       </div>
 
       <div className="footer-icons footer-content">
-        <i className="ion-email contact-us" onClick={toggleContact}></i>
-        <i className="ion-social-facebook facebook"></i>
+        <i className="ion-email contact-us icon-single" onClick={toggleContact}></i>
+        <a href="https://www.facebook.com/groups/821834731293122/"><i className="ion-social-facebook facebook icon-single"></i></a>
       </div>
 
       <p className="footer-rights">Copyright © 2017 by the TNABT organization.</p>

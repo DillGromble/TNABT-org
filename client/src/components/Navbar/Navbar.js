@@ -39,7 +39,7 @@ class Navbar extends Component {
     const { handleMobileClick, toggleMobileNav } = this
 
     return (
-      <nav className="nav-container">
+      <nav className="nav-container" id="top">
         <Link to="/home" onClick={handleMobileClick}>
           <img
             className="logo-nav"
