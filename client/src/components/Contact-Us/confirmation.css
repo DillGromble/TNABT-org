@@ -1,0 +1,11 @@
+.contact-us-confirmation {
+  margin: 220.5px auto;
+}
+
+.contact-us-confirmation > h1 {
+  color: black;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 1.4em;
+}
