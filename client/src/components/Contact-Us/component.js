@@ -24,6 +24,7 @@ const ContactFormComponent = ({
             placeholder="First Name"
             onChange={handleChange}
             value={fname}
+            required
           />
           <input
             className="form-two-input form-input"
@@ -32,6 +33,7 @@ const ContactFormComponent = ({
             placeholder="Last Name"
             onChange={handleChange}
             value={lname}
+            required
           />
         </div>
       </div>
@@ -47,6 +49,7 @@ const ContactFormComponent = ({
             placeholder="Email"
             onChange={handleChange}
             value={email}
+            required
           />
         </div>
       </div>
@@ -62,6 +65,7 @@ const ContactFormComponent = ({
             placeholder="Subject"
             onChange={handleChange}
             value={subject}
+            required
           />
         </div>
       </div>
@@ -77,6 +81,7 @@ const ContactFormComponent = ({
             placeholder="Message"
             onChange={handleChange}
             value={message}
+            required
           />
         </div>
       </div>
