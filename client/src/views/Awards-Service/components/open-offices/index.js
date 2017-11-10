@@ -6,13 +6,25 @@ import OfficeDropdown from './components/office-dropdown'
 
 const dummyOffice = [
   {
-  title: 'TNABT Secretary',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus dolor justo, ac tempus nibh viverra fringilla. Integer ultricies odio sed nisl fringilla, ac bibendum erat maximus. Curabitur cursus rhoncus erat ut cursus. Ut aliquam enim non convallis vestibulum. Phasellus sit amet lacus libero. Mauris accumsan, tortor eget dignissim ultricies, mauris metus lacinia est, et hendrerit sem ante nec nunc. Sed enim sem, viverra a diam nec, elementum rutrum nibh. Nullam quam nisl, tempus ut purus feugiat, maximus euismod nisl. Morbi et lacus quis libero congue placerat.'
+  title: 'Vice President',
+  description: 'The Vice-President shall assume the duties of the President in the President’s absence, and shall work cooperatively with the President in administrating the affairs of the TNABT.  The Vice-President shall be President-Elect.'
   },
   {
-    title: 'TNABT Treasurer',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus dolor justo, ac tempus nibh viverra fringilla. Integer ultricies odio sed nisl fringilla, ac bibendum erat maximus. Curabitur cursus rhoncus erat ut cursus. Ut aliquam enim non convallis vestibulum. Phasellus sit amet lacus libero.'
-  }
+    title: 'West TN Liason',
+    description: 'One member from West Tennessee who shall serve as the liaison for the organization with teachers in the western part of the state.'
+  },
+  {
+    title: 'East TN Liason',
+    description: 'One member from East Tennessee who shall serve as the liaison for the organization with teachers in the easter part of the state.'
+  },
+  {
+    title: 'Middle TN Liason',
+    description: 'One member from Middle Tennessee who shall serve as the liaison for the organization with teachers in the central part of the state.'
+  },
+  {
+    title: 'Two-Year College Representative',
+    description: 'One member from a two-year college who shall serve as the representative of this group in the organization'
+  },
 ]
 
 
