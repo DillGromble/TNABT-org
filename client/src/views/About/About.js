@@ -18,7 +18,10 @@ const About = () => (
     <section className="section-constitution">
       <div className="row">
         <h2>Constitution</h2>
-        <p className="copy">You can read the full version of the TNABT constitution and bylaws <a href="assets/TNABT_constitution_Revised_May_2017.pdf">here</a></p>
+        <p className="copy">You can read the full version of the TNABT
+         constitution and bylaws
+          <a href="assets/TNABT_constitution_Revised_May_2017.pdf">here</a>
+        </p>
       </div>
     </section>
   </div>
