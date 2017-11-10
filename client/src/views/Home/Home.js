@@ -15,7 +15,7 @@ const headerSubtext = (
   </h3>
 )
 
-const Home = () => (
+const Home = (props) => (
   <div>
     <Header height="100vh" bgImg={headerBg} subtext={headerSubtext}>
       Tennessee Association of Biology Teachers
@@ -23,7 +23,7 @@ const Home = () => (
 
     <Mission />
     <PictureNav />
-    <Upcoming />
+    <Upcoming {...props}/>
   </div>
 )
 
