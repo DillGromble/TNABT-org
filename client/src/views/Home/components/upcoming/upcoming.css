@@ -47,6 +47,10 @@
   font-weight: 400;
 }
 
+.mobile-region-container > hr { margin: 20px; }
+.mobile-upcoming-events { margin: 10px 0; }
+
+
 @media only screen and (max-width: 1200px) {
   .upcoming-container {
     height: 202px;

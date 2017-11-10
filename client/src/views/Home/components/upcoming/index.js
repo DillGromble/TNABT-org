@@ -9,9 +9,9 @@ import east from './img/eastTN.png'
 import RegionDetail from './components/region-detail'
 
 const stateEvents = {
-  East: ['East Event Super Good 11/13', 'Event Super Nice 11/30'],
+  East: [],
   Middle: [],
-  West: ['West Event Super Good 11/13']
+  West: []
 }
 
 
