@@ -29,7 +29,7 @@ app
 
   .use('/api', require('./api'))
 
-  .get('*', (req, res) => {
+  .get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, '..', 'client/build/index.html'))
   })
 
