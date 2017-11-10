@@ -23,14 +23,29 @@
 
 .upcoming-mid { margin: 0 -132px 0 -37px; }
 
+.region {
+  cursor: pointer;
+}
+
 .region:hover {
   transform: scale(1.1);
   z-index: 4;
   transition: transform 0.5s;
 }
 
+.mobile-upcoming-container {
+  display: none;
+  width: 75%;
+  margin: 0 auto;
+}
 
-
+.mobile-region-container { margin: 20px; }
+.mobile-region-header {
+  font-size: 1.2em;
+  text-align: center;
+  color: black;
+  font-weight: 400;
+}
 
 @media only screen and (max-width: 1200px) {
   .upcoming-container {
@@ -54,4 +69,6 @@
 @media only screen and (max-width: 767px) {
   .upcoming-container { display: none; }
   .section-upcoming p { display: none; }
+  .mobile-upcoming-container { display: block; }
+  .mobile-upcoming-events { display: block !important; }
 }
