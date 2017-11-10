@@ -40,7 +40,7 @@ class OfficeDropdown extends Component {
           <p className="office-description">
             { this.props.description }
           </p>
-          <button className="btn btn-ghost office-btn">Apply Now</button>
+          <button className="btn btn-ghost office-btn" disabled>Apply Now: Coming soon!</button>
         </article>
 
       </div>
