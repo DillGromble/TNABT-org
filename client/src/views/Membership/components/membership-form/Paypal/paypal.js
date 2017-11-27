@@ -9,7 +9,7 @@ const PayPalPage = ({ message, email }) => (
 
 
     <div className="payment-option">
-      <p className="payment-description">For a one time payment of 1 year at $20: </p>
+      <p className="payment-description">One time payment of $20 for 1 year: </p>
       <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
         <input type="hidden" name="cmd" value="_s-xclick" />
         <input type="hidden" name="hosted_button_id" value="EBS7UCPTYFGKN" />
