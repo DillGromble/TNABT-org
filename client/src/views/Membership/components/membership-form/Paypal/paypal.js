@@ -30,11 +30,11 @@ const PayPalPage = ({ message, email }) => (
 
     </div>
 
-    {/*
+
     <div className="payment-option">
-      <p className="payment-description">A lifetime subscription at $500: </p>
+      {/*<p className="payment-description">A lifetime subscription at $500: </p>*/}
     </div>
-    */}
+
 
     <p className="copy paypal-footer">Once you've submitted payment through Paypal, you'll receive an e-mail at <em>{email}</em> to setup your account!</p>
   </div>
