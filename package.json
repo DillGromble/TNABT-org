@@ -27,7 +27,7 @@
     "passport-local-mongoose": "^4.4.0"
   },
   "scripts": {
-    "install": "(cd client && yarn) && (cd server && yarn)",
+    "postinstall": "cd ./client && yarn",
     "start": "concurrently \"node server/index.js\" \"cd client && yarn start\"",
     "start-dev": "NODE_ENV=dev concurrently \"mongod\" \"nodemon server/index.js --watch server --watch db\" \"cd client && yarn start\"",
     "heroku-postbuild": "cd client && yarn build"
