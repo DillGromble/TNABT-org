@@ -5,11 +5,11 @@ const sendPaymentConfirmation = require('./mailer').sendPaymentConfirmation
 const Member = require('../../db/Members')
 
 
-// const getURI = () => process.env.NODE_ENV === 'dev'
-//   ? 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'
-//   : 'https://ipnpb.paypal.com/cgi-bin/webscr'
+const getURI = () => process.env.NODE_ENV === 'dev'
+  ? 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'
+  : 'https://ipnpb.paypal.com/cgi-bin/webscr'
 
-const getURI = () => 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'
+// const getURI = () => 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'
 
 
 router
