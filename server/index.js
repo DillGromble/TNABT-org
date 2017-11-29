@@ -1,3 +1,4 @@
+require('new')
 const app = require('./app')
 require('../db/index')
 
