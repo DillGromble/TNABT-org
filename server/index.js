@@ -1,4 +1,4 @@
-require('new')
+require('newrelic')
 const app = require('./app')
 require('../db/index')
 
