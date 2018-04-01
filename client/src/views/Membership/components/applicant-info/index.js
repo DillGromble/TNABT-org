@@ -9,7 +9,7 @@ const ApplicantSection = ({ openForm, openContacts }) => (
     <div className="row">
       <h2>Applicant Information</h2>
       <p className="copy">
-        Persons interested in join TNABT are encouraged to complete the
+        Persons interested in joining TNABT are encouraged to complete the
         application form and submit membership dues via the website.  If you
         have any questions, please contact an officer at the link below.
       </p>

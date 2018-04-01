@@ -7,26 +7,27 @@ import Officer from './components/officer'
 import bob from './img/bob.png'
 import sadler from './img/ksadler.jpg'
 import alanfear from './img/alafear.jpg'
+import cox from './img/Cox.jpg'
 import placeholder from './img/placeholder-headshot.png'
 
 const officersArr = [
   {
-    name: 'Brenda Royal',
-    office: 'President',
-    school: 'Central Magnet School',
-    classes: '---------',
-    phone: '(615) 904-6789',
-    email: 'royalb@rcschools.net',
-    image: placeholder
-  },
-  {
     name: 'Kim Sadler',
-    office: 'Vice-President',
+    office: 'President',
     school: 'Middle Tennessee State University',
     classes: '---------',
     phone: '(615) 904-8283',
     email: 'kim.sadler@mtsu.edu',
     image: sadler
+  },
+  {
+    name: 'Tom Cox',
+    office: 'Vice-President',
+    school: 'Brentwood Academy',
+    classes: 'Biology and AP Biology',
+    phone: '615-373-4764  ext: 609',
+    email: 'tom_cox@brentwoodacademy.com',
+    image: cox
   },
   {
     name: 'Alicja Lanfear',
