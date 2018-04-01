@@ -21,7 +21,7 @@ const Awards = () => (
           To nominate someone for the Outstanding Biology Teacher Award:
         </p>
         <p className="copy nominate-link">
-          Click <a href="http://nabt.org/Awards-2017-NABT-Award-Nomination-Form">Here</a>
+          Nomiations ended March 15th
         </p>
       </div>
     </section>

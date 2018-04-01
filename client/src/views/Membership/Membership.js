@@ -51,7 +51,11 @@ export default class Membership extends Component {
           </div>
         </section>
 
-        <ApplicantSection openForm={this.toggleForm} openContacts={this.props.toggleContact}/>
+        <ApplicantSection
+          openForm={this.toggleForm}
+          openContacts={this.props.toggleContact}
+          toggleAuth={this.props.toggleAuth}
+        />
 
         <MemberForm
           isVisible={this.state.showForm ? 'popup-show' : ''}

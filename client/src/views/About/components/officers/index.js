@@ -8,7 +8,7 @@ import bob from './img/bob.png'
 import sadler from './img/ksadler.jpg'
 import alanfear from './img/alafear.jpg'
 import cox from './img/Cox.jpg'
-import placeholder from './img/placeholder-headshot.png'
+// import placeholder from './img/placeholder-headshot.png'
 
 const officersArr = [
   {

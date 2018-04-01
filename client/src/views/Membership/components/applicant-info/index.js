@@ -3,7 +3,7 @@ import React from 'react'
 
 import './applicant-info.css'
 
-const ApplicantSection = ({ openForm, openContacts }) => (
+const ApplicantSection = ({ openForm, openContacts, toggleAuth }) => (
   <section className="section-applicant-info">
 
     <div className="row">
@@ -17,7 +17,7 @@ const ApplicantSection = ({ openForm, openContacts }) => (
       <aside>
         <p className="copy">
           Are you an active member looking to renew?
-          Please <a href="login">login</a>
+          Please <a className="login-link" onClick={ toggleAuth }>login</a>
         </p>
       </aside>
 
