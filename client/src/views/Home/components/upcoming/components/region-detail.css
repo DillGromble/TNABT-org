@@ -7,3 +7,34 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
+
+.event-wrapper {
+  text-align: center;
+  line-height: 26px;
+  overflow-y: auto;
+  border: 1px solid #0E820C;
+  padding: 10px;
+}
+
+.event-location { font-size: 0.8em; }
+
+.event-details {
+  font-size: 0.8em;
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  transition: all 0.5s;
+}
+
+.event-details-link {
+  cursor: pointer;
+  font-size: 0.8em;
+  color: #2145ee;
+}
+
+.hidden {
+  height: 0px;
+  overflow-y: hidden;
+}
+
+.shown { height: 600px; }

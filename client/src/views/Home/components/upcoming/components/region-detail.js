@@ -1,6 +1,7 @@
 import React from 'react'
 
 import PopupForm from '../../../../../components/Popup-Form/PopupForm'
+import Event from './event'
 
 import './region-detail.css'
 
@@ -10,9 +11,9 @@ const RegionDetail = (props) => (
       {
         props.events.length
           ?
-            props.events.map(event => (<p key={event}>{event}</p>))
+            props.events.map(event => ( <Event event={event} key={ event.title } />))
           :
-            <p>There are currently no schedules events in {props.region} TN</p>
+            <p>There are currently no scheduled events in {props.region} TN</p>
       }
     </div>
   </PopupForm>

@@ -4,7 +4,7 @@ import Header from '../../components/Header/Header'
 import Mission from './components/mission'
 import PictureNav from './components/picture-nav'
 import Upcoming from './components/upcoming'
-
+import News from './components/news'
 
 import headerBg from '../../img/home-hero.jpg'
 
@@ -21,6 +21,7 @@ const Home = (props) => (
       Tennessee Association of Biology Teachers
     </Header>
 
+    <News />
     <Mission />
     <PictureNav />
     <Upcoming {...props}/>

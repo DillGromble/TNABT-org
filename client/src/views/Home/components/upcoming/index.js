@@ -10,7 +10,43 @@ import RegionDetail from './components/region-detail'
 
 const stateEvents = {
   East: [],
-  Middle: [],
+  Middle: [
+    {
+      host: 'Tennessee Association of Biology Teachers',
+      title: 'Second Annual Meeting',
+      location: 'Central Magnet School',
+      date: 'April 28, 2018  8:00-3:00',
+      body: `
+      <br />
+      <strong>Featured Speaker: </strong>
+      <br>
+      <p><strong>Dr. Neil Lamb, Hudson Alpha Institute for Biotechnology</strong></p>
+      <p><strong>Recipient of the Faraday Science Communicator Award from NSTA</strong></p>
+      <br />
+      <p>
+        Please join your biology colleagues for the second annual
+        meeting of TNABT as we welcome Dr. Neil Lamb to speak on
+        the top biotechnology innovations of the past year. The
+        afternoon will be filled with new labs from BioRad and the
+        newest releases from Howard Hughes Medical Institute
+        Biointeractive. Lunch will be available to order from Panera
+        so you can meet and greet your colleagues from around the
+        state.
+      </p>
+      <br />
+      <p>
+        Bring your favorite biology read for a book swap. Be
+        prepared to contribute to the discussion on how to get more
+        teachers involved in NABT and TNABT. This will be a day
+        guaranteed to provide new information, pertinent to our
+        classrooms, and build relationships to strengthen your
+        teaching career.
+      </p>
+      <br />
+      We can’t wait to meet you!
+      `
+    }
+  ],
   West: []
 }
 
@@ -20,7 +56,7 @@ export default class Upcoming extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      events: '',
+      events: [],
       detailOpen: false,
       region: ''
     }
@@ -58,7 +94,7 @@ export default class Upcoming extends Component {
         <div className="mobile-region-container">
           <h1 className="mobile-region-header">{region} TN Events:</h1>
           {stateEvents[region].map(event => (
-            <p className="mobile-upcoming-events" key={event}>{event}</p>
+            <p className="mobile-upcoming-events" key={event.title}>{event.title}</p>
           ))}
           <hr />
         </div>
