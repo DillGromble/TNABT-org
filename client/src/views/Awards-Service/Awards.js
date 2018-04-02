@@ -21,7 +21,7 @@ const Awards = () => (
           To nominate someone for the Outstanding Biology Teacher Award:
         </p>
         <p className="copy nominate-link">
-          Nomiations ended March 15th
+          Nominations ended March 15th
         </p>
       </div>
     </section>
