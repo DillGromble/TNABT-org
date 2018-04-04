@@ -1,0 +1,47 @@
+.mail_list_form {
+  border: 1px solid #0E820C;
+  box-shadow: 0px 1px 2px #0E820C;
+  width: 40%;
+  min-width: 450px;
+  height: 220px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.mail_list_input_group {
+  margin: 0 auto;
+  width: 85%;
+}
+
+.mail_list_input {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.mail_list_input > input {
+  height: 40px;
+  width: 85%;
+  font: inherit;
+  font-size: 0.9em;
+  padding-left: 10px;
+}
+
+
+
+.mail_list_btn_group {
+  margin: 12px auto;
+  width: 85%;
+  text-align: center;
+}
+
+
+.mail_list_submit {
+  font-size: 0.7em;
+  padding: 10px 15px;
+  margin: 10px 26px;
+}
+
+.mail_list_thanks {
+  color: #0E820C;
+}

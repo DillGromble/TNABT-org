@@ -1,24 +1,25 @@
-import React from 'react'
+import React from 'react';
+import MailListForm from '../../../../../components/MailList-Form/MailList-Form';
 
 
 class Event extends React.Component {
 
   constructor(props) {
-    super(props)
-    this.state = { descriptionState: 'hidden' }
+    super(props);
+    this.state = { descriptionState: 'hidden' };
 
-    this.toggleEventBody = this.toggleEventBody.bind(this)
-    this.renderEventBody = this.renderEventBody.bind(this)
+    this.toggleEventBody = this.toggleEventBody.bind(this);
+    this.renderEventBody = this.renderEventBody.bind(this);
   }
 
   toggleEventBody() {
     this.setState({
       descriptionState: this.state.descriptionState === 'hidden' ? 'shown' : 'hidden'
-    })
+    });
   }
 
   renderEventBody() {
-    return { __html: this.props.event.body }
+    return { __html: this.props.event.body };
   }
 
   render() {
@@ -35,6 +36,9 @@ class Event extends React.Component {
           className={`${this.state.descriptionState} event-details`}
           dangerouslySetInnerHTML={this.renderEventBody()}
         ></p>
+        <div style={{ margin: '15px 0 30px' }}>
+          <MailListForm />
+        </div>
       </div>
     )
   }

@@ -116,6 +116,11 @@ h3 {
 
 a { text-decoration: none; }
 
+.link {
+  cursor: pointer;
+  color: #2145ee;
+}
+
 
 /*--------------------------------Buttons-------------------------------------*/
 .btn {
