@@ -21,13 +21,15 @@ export default class MembershipForm extends Component {
       classes: '',
       formComplete: false,
       error: false,
+      phoneError: false,
       errMsg: ''
     }
-    this.state = Object.assign({}, this.initialState)
-    this.setState = this.setState.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
-    this.handleChange = this.handleChange.bind(this)
-    this.resetFields = this.resetFields.bind(this)
+    this.state = Object.assign({}, this.initialState);
+    this.setState = this.setState.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.resetFields = this.resetFields.bind(this);
+    this.displayError = this.displayError.bind(this);
   }
 
 
@@ -38,13 +40,16 @@ export default class MembershipForm extends Component {
 
   onSubmit(e) {
     e.preventDefault()
+    if (this.state.phone.includes('-') || !parseInt(this.state.phone, 10)) {
+      return this.displayError('Please use only numbers for phone', 'phone');
+    }
     axios.post('/api/membership/apply', this.state)
       .then(res => this.setState({ formComplete: true }))
       .catch(err => {
         if (err.response.status === 409) {
-          this.setState({ error: true, errMsg: err.response.data }, () => {
-            setTimeout(() => this.setState({ error: false }), 3000)
-          })
+          this.displayError(err.response.data, 'email');
+        } else {
+          alert('There was an error processing the request.');
         }
       })
   }
@@ -55,10 +60,24 @@ export default class MembershipForm extends Component {
   }
 
 
+  displayError(msg, type) {
+    const stateToSet = {};
+    if (type === 'email') {
+      stateToSet.error = true;
+    } else {
+      stateToSet.phoneError = true;
+    }
+    stateToSet.errMsg = msg;
+    this.setState(stateToSet, () => {
+      setTimeout(() => this.setState({ error: false, phoneError: false }), 3000)
+    });
+  }
+
+
   render() {
     const { onSubmit, handleChange, resetFields } = this
     const { fname,  lname,  street,  city,     zip,
-            phone,  email,  school,  classes,  error,  errMsg } = this.state
+            phone,  email,  school,  classes,  error, phoneError, errMsg } = this.state
     return (
       <PopupForm {...this.props} resetForm={resetFields} header="Membership Form" type="form">
         {
@@ -79,6 +98,7 @@ export default class MembershipForm extends Component {
               school={school}
               classes={classes}
               error={error}
+              phoneError={phoneError}
               errMsg={errMsg}
             />
         }

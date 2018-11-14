@@ -4,7 +4,7 @@ import './membership-form.css'
 
 
 const MemberForm = ({ onSubmit, handleChange, fname, lname, street,
-  city, zip, phone, email, school, classes, error, errMsg }) => (
+  city, zip, phone, email, school, classes, error, phoneError, errMsg }) => (
     <div>
       <form className="form-tall" onSubmit={onSubmit}>
         <div className="member-form-group">
@@ -70,7 +70,11 @@ const MemberForm = ({ onSubmit, handleChange, fname, lname, street,
 
         <div className="member-form-group clearfix">
           <div className="col span-1-of-2">
-            <label className="form-label" htmlFor="phone">Phone:</label>
+            <label className={`form-label ${phoneError ? 'error-highlight' : ''}`}
+              htmlFor="phone"
+            >
+              {phoneError ? errMsg : 'Phone:'}
+            </label>
             <br />
             <div className="input-group member-input-group">
               <input
