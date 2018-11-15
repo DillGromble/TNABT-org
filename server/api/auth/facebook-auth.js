@@ -95,16 +95,16 @@ router
   .get('/', passport.authenticate('facebookAuthStrategy', { scope: 'email' }))
 
   .get('/callback', passport.authenticate('facebookAuthStrategy', {
-      successRedirect: 'http://www.tnabt.org/',
-      failureRedirect: 'http://www.tnabt.org/#/auth-failure'
+      successRedirect: 'https://www.tnabt.org/',
+      failureRedirect: 'https://www.tnabt.org/#/auth-failure'
   }))
 
 
   .get('/connect', passport.authorize('facebookConnectStrategy', { scope: 'email' }))
 
   .get('/connect/callback', passport.authorize('facebookConnectStrategy', {
-      successRedirect: 'http://www.tnabt.org/',
-      failureRedirect: 'http://www.tnabt.org/#/auth-failure'
+      successRedirect: 'https://www.tnabt.org/',
+      failureRedirect: 'https://www.tnabt.org/#/auth-failure'
   }))
 
 
