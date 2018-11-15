@@ -25,7 +25,8 @@ const memberSchema = new Schema({
   account_active: { type: Boolean, default: false },
   paid_next_year: { type: Boolean, default: false },
   lifetime_member: Boolean,
-  password_change_required: { type: Boolean, default: true }
+  password_change_required: { type: Boolean, default: true },
+  is_admin: Boolean
 })
 
 

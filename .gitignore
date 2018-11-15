@@ -71,3 +71,4 @@ typings/
 /build
 
 secrets.js
+db/migrations
